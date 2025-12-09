@@ -1,0 +1,442 @@
+{
+  "key": "group_hj_theme_settings",
+  "title": "Theme Settings",
+  "fields": [
+    {
+      "key": "field_hj_header_tab",
+      "label": "Header",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_header_logo",
+      "label": "Header Logo",
+      "name": "header_logo",
+      "type": "image",
+      "instructions": "Upload the header logo (SVG supported)",
+      "required": 0,
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_hj_tagline",
+      "label": "Tagline",
+      "name": "tagline",
+      "type": "text",
+      "instructions": "Enter your site tagline",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_header_menu",
+      "label": "Header Menu",
+      "name": "header_menu",
+      "type": "nav_menu",
+      "instructions": "Select which menu to display in the header",
+      "required": 0,
+      "save_format": "id",
+      "container": "",
+      "menu": ""
+    },
+    {
+      "key": "field_hj_header_navigation",
+      "label": "Header Navigation (Block)",
+      "name": "header_navigation",
+      "type": "post_object",
+      "instructions": "Select a Navigation block (Navigation post) if you use the block editor menus",
+      "required": 0,
+      "post_type": ["wp_navigation"],
+      "return_format": "id",
+      "ui": 1,
+      "multiple": 0,
+      "allow_null": 1
+    },
+    {
+      "key": "field_hj_header_cta_label",
+      "label": "CTA Label",
+      "name": "header_cta_label",
+      "type": "text",
+      "instructions": "Text for the header CTA button",
+      "required": 0,
+      "default_value": "Contact Us"
+    },
+    {
+      "key": "field_hj_header_cta_url",
+      "label": "CTA URL",
+      "name": "header_cta_url",
+      "type": "url",
+      "instructions": "Link for the header CTA button",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_footer_tab",
+      "label": "Footer",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_footer_logo",
+      "label": "Footer Logo",
+      "name": "footer_logo",
+      "type": "image",
+      "instructions": "Upload the footer logo (SVG supported)",
+      "required": 0,
+      "return_format": "id",
+      "preview_size": "medium",
+      "library": "all"
+    },
+    {
+      "key": "field_hj_footer_text",
+      "label": "Footer Text",
+      "name": "footer_text",
+      "type": "textarea",
+      "instructions": "Enter the footer description text",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_footer_menu",
+      "label": "Footer Menu",
+      "name": "footer_menu",
+      "type": "nav_menu",
+      "instructions": "Select which menu to display in the footer",
+      "required": 0,
+      "save_format": "id",
+      "container": "",
+      "menu": ""
+    },
+    {
+      "key": "field_hj_footer_navigation",
+      "label": "Footer Navigation (Block)",
+      "name": "footer_navigation",
+      "type": "post_object",
+      "instructions": "Select a Navigation block (Navigation post) if you use the block editor menus",
+      "required": 0,
+      "post_type": ["wp_navigation"],
+      "return_format": "id",
+      "ui": 1,
+      "multiple": 0,
+      "allow_null": 1
+    },
+    {
+      "key": "field_hj_footer_columns",
+      "label": "Footer Columns",
+      "name": "footer_columns",
+      "type": "select",
+      "instructions": "Choose how many columns the footer menu uses",
+      "required": 0,
+      "choices": {
+        "2": "2 Columns",
+        "3": "3 Columns",
+        "4": "4 Columns"
+      },
+      "default_value": "3",
+      "return_format": "value",
+      "ui": 1
+    },
+    {
+      "key": "field_hj_footer_background",
+      "label": "Footer Background Color",
+      "name": "footer_background",
+      "type": "color_picker",
+      "instructions": "Background color for the footer top area",
+      "required": 0,
+      "default_value": "#0b1220"
+    },
+    {
+      "key": "field_hj_footer_bottom_bar_color",
+      "label": "Bottom Bar Color",
+      "name": "footer_bottom_bar_color",
+      "type": "color_picker",
+      "instructions": "Background color for the footer bottom bar",
+      "required": 0,
+      "default_value": "#0a0f1c"
+    },
+    {
+      "key": "field_hj_footer_copyright",
+      "label": "Copyright Text",
+      "name": "footer_copyright",
+      "type": "text",
+      "instructions": "e.g., © 2025 Your Company. All rights reserved.",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_typography_tab",
+      "label": "Typography",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_font_family",
+      "label": "Primary Font Family",
+      "name": "font_family",
+      "type": "text",
+      "instructions": "e.g., 'Arial, sans-serif' or 'Georgia, serif'",
+      "required": 0,
+      "wrapper": {"width": "50"},
+      "default_value": "Arial, sans-serif"
+    },
+    {
+      "key": "field_hj_heading_font",
+      "label": "Heading Font Family",
+      "name": "heading_font",
+      "type": "text",
+      "instructions": "e.g., 'Georgia, serif' or 'Trebuchet MS'",
+      "required": 0,
+      "wrapper": {"width": "50"},
+      "default_value": "Georgia, serif"
+    },
+    {
+      "key": "field_hj_colors_tab",
+      "label": "Colors & Styles",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_primary_color",
+      "label": "Primary Color",
+      "name": "primary_color",
+      "type": "color_picker",
+      "instructions": "Main brand color",
+      "required": 0,
+      "wrapper": {"width": "33.333"},
+      "default_value": "#0073aa"
+    },
+    {
+      "key": "field_hj_secondary_color",
+      "label": "Secondary Color",
+      "name": "secondary_color",
+      "type": "color_picker",
+      "instructions": "Used for backgrounds and accents",
+      "required": 0,
+      "wrapper": {"width": "33.333"},
+      "default_value": "#f5f5f5"
+    },
+    {
+      "key": "field_hj_accent_color",
+      "label": "Accent Color",
+      "name": "accent_color",
+      "type": "color_picker",
+      "instructions": "Used for highlights and buttons",
+      "required": 0,
+      "wrapper": {"width": "33.333"},
+      "default_value": "#ff6b6b"
+    },
+    {
+      "key": "field_hj_button_primary_bg",
+      "label": "Primary Button Background",
+      "name": "button_primary_bg",
+      "type": "color_picker",
+      "instructions": "Background color for primary buttons",
+      "required": 0,
+      "wrapper": {"width": "25"},
+      "default_value": "#007bff"
+    },
+    {
+      "key": "field_hj_button_primary_text",
+      "label": "Primary Button Text",
+      "name": "button_primary_text",
+      "type": "color_picker",
+      "instructions": "Text color for primary buttons",
+      "required": 0,
+      "wrapper": {"width": "25"},
+      "default_value": "#ffffff"
+    },
+    {
+      "key": "field_hj_button_secondary_bg",
+      "label": "Secondary Button Background",
+      "name": "button_secondary_bg",
+      "type": "color_picker",
+      "instructions": "Background color for secondary buttons",
+      "required": 0,
+      "wrapper": {"width": "25"},
+      "default_value": "#6c757d"
+    },
+    {
+      "key": "field_hj_button_secondary_text",
+      "label": "Secondary Button Text",
+      "name": "button_secondary_text",
+      "type": "color_picker",
+      "instructions": "Text color for secondary buttons",
+      "required": 0,
+      "wrapper": {"width": "25"},
+      "default_value": "#ffffff"
+    },
+    {
+      "key": "field_hj_social_tab",
+      "label": "Social Links",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_social_links",
+      "label": "Social Links",
+      "name": "social_links",
+      "type": "repeater",
+      "instructions": "Add your social media profiles",
+      "required": 0,
+      "layout": "table",
+      "button_label": "Add Social Link",
+      "sub_fields": [
+        {
+          "key": "field_hj_social_platform",
+          "label": "Platform",
+          "name": "platform",
+          "type": "select",
+          "choices": {
+            "facebook": "Facebook",
+            "twitter": "Twitter / X",
+            "instagram": "Instagram",
+            "linkedin": "LinkedIn",
+            "youtube": "YouTube",
+            "tiktok": "TikTok",
+            "pinterest": "Pinterest"
+          },
+          "default_value": "facebook",
+          "return_format": "value"
+        },
+        {
+          "key": "field_hj_social_url",
+          "label": "Profile URL",
+          "name": "url",
+          "type": "url",
+          "instructions": "Full URL to your profile",
+          "required": 0,
+          "default_value": ""
+        }
+      ]
+    },
+    {
+      "key": "field_hj_seo_tab",
+      "label": "SEO",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_google_analytics",
+      "label": "Google Analytics ID",
+      "name": "google_analytics_id",
+      "type": "text",
+      "instructions": "Enter your GA4 measurement ID (e.g., G-XXXXXXXXXX)",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_site_description",
+      "label": "Site Description",
+      "name": "site_description",
+      "type": "textarea",
+      "instructions": "Meta description for search engines (150-160 characters)",
+      "required": 0,
+      "default_value": "",
+      "maxlength": "160"
+    },
+    {
+      "key": "field_hj_google_site_verification",
+      "label": "Google Site Verification Code",
+      "name": "google_site_verification",
+      "type": "text",
+      "instructions": "Paste the verification code from Google Search Console",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_ai_integration_tab",
+      "label": "AI Integration",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_openai_api_key",
+      "label": "OpenAI API Key",
+      "name": "openai_api_key",
+      "type": "password",
+      "instructions": "Enter your OpenAI API key (sk-...). Get it from https://platform.openai.com/api-keys",
+      "required": 0,
+      "placeholder": "sk-..."
+    },
+    {
+      "key": "field_hj_openai_model",
+      "label": "Default AI Model",
+      "name": "openai_model",
+      "type": "select",
+      "instructions": "Select the default OpenAI model to use",
+      "required": 0,
+      "choices": {
+        "gpt-4": "GPT-4",
+        "gpt-4-turbo": "GPT-4 Turbo",
+        "gpt-3.5-turbo": "GPT-3.5 Turbo",
+        "gpt-4o": "GPT-4o"
+      },
+      "default_value": "gpt-3.5-turbo",
+      "return_format": "value"
+    },
+    {
+      "key": "field_hj_ai_features",
+      "label": "Enable AI Features",
+      "name": "ai_features",
+      "type": "true_false",
+      "instructions": "Enable or disable AI-powered features on your site",
+      "required": 0,
+      "message": "Enable AI features",
+      "default_value": 0,
+      "ui": 1,
+      "ui_on_text": "Enabled",
+      "ui_off_text": "Disabled"
+    },
+    {
+      "key": "field_hj_admin_tab",
+      "label": "Admin",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_disable_gutenberg",
+      "label": "Disable Gutenberg Editor",
+      "name": "disable_gutenberg",
+      "type": "true_false",
+      "instructions": "Check to disable the block editor (use Classic editor).",
+      "required": 0,
+      "message": "Disable Gutenberg",
+      "default_value": 0,
+      "ui": 1,
+      "ui_on_text": "Disabled",
+      "ui_off_text": "Enabled"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "hj-theme-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Main theme settings with organized tabs"
+}

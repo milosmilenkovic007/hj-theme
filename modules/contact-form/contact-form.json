@@ -1,0 +1,33 @@
+{
+  "name": "contact-form",
+  "label": "Contact Form",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_contact_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text"
+    },
+    {
+      "key": "field_contact_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_contact_form_id",
+      "label": "Form ID (Gravity Forms or WPForms)",
+      "name": "form_id",
+      "type": "number",
+      "required": true
+    },
+    {
+      "key": "field_contact_bg_color",
+      "label": "Background Color",
+      "name": "background_color",
+      "type": "color_picker",
+      "default_value": "#ffffff"
+    }
+  ]
+}

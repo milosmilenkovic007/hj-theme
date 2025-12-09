@@ -1,0 +1,94 @@
+/**
+ * Buttons
+ */
+@use '../variables' as *;
+@use 'sass:color';
+
+@mixin btn-base {
+	display: inline-block;
+	padding: $spacing-md $spacing-lg;
+	font-size: $font-size-base;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: $border-radius-md;
+	cursor: pointer;
+	transition: $transition-base;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+@mixin btn-primary-variant {
+	background-color: $color-primary;
+	color: $color-white;
+
+	&:hover {
+		background-color: color.adjust($color-primary, $lightness: -10%);
+		color: $color-white;
+	}
+}
+
+@mixin btn-secondary-variant {
+	background-color: $color-secondary;
+	color: $color-white;
+
+	&:hover {
+		background-color: color.adjust($color-secondary, $lightness: -10%);
+		color: $color-white;
+	}
+}
+
+.btn {
+	@include btn-base;
+}
+
+.btn-primary {
+	background-color: var(--hj-btn-primary-bg, $color-primary);
+	color: var(--hj-btn-primary-text, #ffffff);
+
+	&:hover {
+		background-color: color-mix(in srgb, var(--hj-btn-primary-bg, $color-primary) 90%, black 10%);
+		color: var(--hj-btn-primary-text, #ffffff);
+	}
+}
+
+.btn-secondary {
+	background-color: var(--hj-btn-secondary-bg, $color-secondary);
+	color: var(--hj-btn-secondary-text, #ffffff);
+
+	&:hover {
+		background-color: color-mix(in srgb, var(--hj-btn-secondary-bg, $color-secondary) 90%, black 10%);
+		color: var(--hj-btn-secondary-text, #ffffff);
+	}
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: var(--hj-btn-primary-bg, $color-primary);
+	border: 2px solid var(--hj-btn-primary-bg, $color-primary);
+
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+	}
+}
+
+.btn-lg {
+	padding: $spacing-lg $spacing-xxl;
+	font-size: 1.1rem;
+}
+
+.btn-sm {
+	padding: $spacing-sm $spacing-md;
+	font-size: 0.9rem;
+}

@@ -1,0 +1,60 @@
+/**
+ * Colors
+ */
+@use '../variables' as *;
+
+.text-primary {
+	color: $color-primary;
+}
+
+.text-secondary {
+	color: $color-secondary;
+}
+
+.text-success {
+	color: $color-success;
+}
+
+.text-danger {
+	color: $color-danger;
+}
+
+.text-warning {
+	color: $color-warning;
+}
+
+.text-info {
+	color: $color-info;
+}
+
+.text-light {
+	color: $color-light;
+}
+
+.text-dark {
+	color: $color-dark;
+}
+
+.text-white {
+	color: $color-white;
+}
+
+.bg-primary {
+	background-color: $color-primary;
+}
+
+.bg-secondary {
+	background-color: $color-secondary;
+}
+
+.bg-light {
+	background-color: $color-light;
+}
+
+.bg-dark {
+	background-color: $color-dark;
+}
+
+.bg-white {
+	background-color: $color-white;
+}

@@ -1,0 +1,8 @@
+/**
+ * Block Styles Compilation
+ * Imports all block-specific styles
+ */
+
+@use 'sass:color';
+@use 'variables' as *;
+@use 'blocks/text-image';

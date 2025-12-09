@@ -1,0 +1,63 @@
+{
+  "name": "testimonials",
+  "label": "Testimonials Section",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_testimonials_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text"
+    },
+    {
+      "key": "field_testimonials_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_testimonials_list",
+      "label": "Testimonials",
+      "name": "testimonials",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_testimonial_text",
+          "label": "Testimonial Text",
+          "name": "text",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "key": "field_testimonial_image",
+          "label": "Author Image",
+          "name": "image",
+          "type": "image",
+          "return_format": "id"
+        },
+        {
+          "key": "field_testimonial_name",
+          "label": "Author Name",
+          "name": "name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "field_testimonial_title",
+          "label": "Author Title",
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "key": "field_testimonial_rating",
+          "label": "Rating (1-5)",
+          "name": "rating",
+          "type": "number",
+          "min": 1,
+          "max": 5,
+          "default_value": 5
+        }
+      ]
+    }
+  ]
+}

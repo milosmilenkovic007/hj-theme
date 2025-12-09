@@ -1,0 +1,52 @@
+{
+  "name": "hero",
+  "label": "Hero Section",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_hero_title",
+      "label": "Title",
+      "name": "title",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "field_hero_subtitle",
+      "label": "Subtitle",
+      "name": "subtitle",
+      "type": "text"
+    },
+    {
+      "key": "field_hero_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_hero_image",
+      "label": "Background Image",
+      "name": "image",
+      "type": "image",
+      "return_format": "id"
+    },
+    {
+      "key": "field_hero_cta_text",
+      "label": "CTA Button Text",
+      "name": "cta_text",
+      "type": "text"
+    },
+    {
+      "key": "field_hero_cta_link",
+      "label": "CTA Button Link",
+      "name": "cta_link",
+      "type": "url"
+    },
+    {
+      "key": "field_hero_bg_color",
+      "label": "Background Color",
+      "name": "background_color",
+      "type": "color_picker",
+      "default_value": "#ffffff"
+    }
+  ]
+}

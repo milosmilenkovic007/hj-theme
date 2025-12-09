@@ -1,0 +1,142 @@
+/**
+ * Text & Image Block Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+@use 'sass:color';
+
+.text-image-block {
+  padding: $spacing-xl 0;
+  transition: background-color 0.3s ease;
+
+  .text-image-inner {
+    display: grid;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @include media-md {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &.position-left {
+    .text-image-inner {
+      @include media-md {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .text-image-media {
+      order: -1;
+
+      @include media-md {
+        order: 0;
+      }
+    }
+  }
+
+  &.position-right {
+    .text-image-inner {
+      @include media-md {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .text-image-media {
+      order: 1;
+    }
+  }
+
+  &.layout-fullwidth {
+    .text-image-inner {
+      max-width: 100%;
+      padding: 0 $spacing-lg;
+
+      @include media-md {
+        padding: 0 $spacing-xl;
+      }
+    }
+  }
+
+  &.layout-container {
+    .text-image-inner {
+      max-width: $container-max-width;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 $spacing-md;
+
+      @include media-md {
+        padding: 0 $spacing-lg;
+      }
+    }
+  }
+
+  .text-image-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .text-image-subheading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $color-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  .text-image-heading {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+    color: $color-dark;
+
+    @include media-md {
+      font-size: 2.5rem;
+    }
+  }
+
+  .text-image-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: $color-secondary;
+
+    p {
+      margin-bottom: $spacing-md;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $color-primary;
+      text-decoration: underline;
+
+      &:hover {
+        color: color.adjust($color-primary, $lightness: -10%);
+      }
+    }
+  }
+
+  .text-image-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text-image-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: $border-radius-lg;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .text-image-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+}

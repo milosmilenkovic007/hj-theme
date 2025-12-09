@@ -1,0 +1,60 @@
+{
+  "name": "cta",
+  "label": "Call To Action",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_cta_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "field_cta_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_cta_button_text",
+      "label": "Button Text",
+      "name": "button_text",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "field_cta_button_link",
+      "label": "Button Link",
+      "name": "button_link",
+      "type": "url",
+      "required": true
+    },
+    {
+      "key": "field_cta_button_style",
+      "label": "Button Style",
+      "name": "button_style",
+      "type": "select",
+      "choices": {
+        "primary": "Primary",
+        "secondary": "Secondary",
+        "outline": "Outline"
+      },
+      "default_value": "primary"
+    },
+    {
+      "key": "field_cta_bg_color",
+      "label": "Background Color",
+      "name": "background_color",
+      "type": "color_picker",
+      "default_value": "#f5f5f5"
+    },
+    {
+      "key": "field_cta_text_color",
+      "label": "Text Color",
+      "name": "text_color",
+      "type": "color_picker",
+      "default_value": "#000000"
+    }
+  ]
+}

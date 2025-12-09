@@ -1,0 +1,629 @@
+[
+  {
+    "key": "group_hj_theme_general",
+    "title": "HJ Theme - General Settings",
+    "fields": [
+      {
+        "key": "field_hj_header_title",
+        "label": "Header",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_header_logo",
+        "label": "Logo",
+        "name": "header_logo",
+        "type": "image",
+        "instructions": "Upload your site logo",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "id",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_hj_header_logo_width",
+        "label": "Logo Width",
+        "name": "header_logo_width",
+        "type": "number",
+        "instructions": "Logo width in pixels",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 200,
+        "min": 50,
+        "max": 500,
+        "step": 10
+      },
+      {
+        "key": "field_hj_header_tagline",
+        "label": "Header Tagline",
+        "name": "header_tagline",
+        "type": "text",
+        "instructions": "Additional tagline or slogan",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        }
+      },
+      {
+        "key": "field_hj_header_sticky",
+        "label": "Sticky Header",
+        "name": "header_sticky",
+        "type": "true_false",
+        "instructions": "Enable sticky header on scroll",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1
+      },
+      {
+        "key": "field_hj_header_search",
+        "label": "Show Search",
+        "name": "header_search",
+        "type": "true_false",
+        "instructions": "Display search box in header",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1
+      },
+      {
+        "key": "field_hj_footer_tab",
+        "label": "Footer",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_footer_copyright",
+        "label": "Copyright Text",
+        "name": "footer_copyright",
+        "type": "text",
+        "instructions": "Copyright notice text",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "© 2025 Your Site Name. All rights reserved."
+      },
+      {
+        "key": "field_hj_footer_logo",
+        "label": "Footer Logo",
+        "name": "footer_logo",
+        "type": "image",
+        "instructions": "Optional footer logo (leave blank to hide)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "id",
+        "preview_size": "medium",
+        "library": "all"
+      },
+      {
+        "key": "field_hj_footer_widgets",
+        "label": "Show Footer Widgets",
+        "name": "footer_widgets",
+        "type": "true_false",
+        "instructions": "Display footer widget areas",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1
+      },
+      {
+        "key": "field_hj_footer_newsletter",
+        "label": "Show Newsletter",
+        "name": "footer_newsletter",
+        "type": "true_false",
+        "instructions": "Display newsletter signup",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 0
+      },
+      {
+        "key": "field_hj_footer_background",
+        "label": "Footer Background Color",
+        "name": "footer_background",
+        "type": "color_picker",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#ffffff"
+      },
+      {
+        "key": "field_hj_typography_tab",
+        "label": "Typography",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_body_font",
+        "label": "Body Font",
+        "name": "body_font",
+        "type": "select",
+        "instructions": "Default font for body text",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "system": "System Stack",
+          "georgia": "Georgia",
+          "times": "Times New Roman",
+          "verdana": "Verdana"
+        },
+        "default_value": "system"
+      },
+      {
+        "key": "field_hj_heading_font",
+        "label": "Heading Font",
+        "name": "heading_font",
+        "type": "select",
+        "instructions": "Font for headings (h1-h6)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "playfair": "Playfair Display",
+          "montserrat": "Montserrat",
+          "poppins": "Poppins",
+          "system": "System Stack"
+        },
+        "default_value": "playfair"
+      },
+      {
+        "key": "field_hj_body_font_size",
+        "label": "Body Font Size",
+        "name": "body_font_size",
+        "type": "number",
+        "instructions": "Default font size in pixels",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 16,
+        "min": 12,
+        "max": 24,
+        "step": 1
+      },
+      {
+        "key": "field_hj_body_line_height",
+        "label": "Body Line Height",
+        "name": "body_line_height",
+        "type": "number",
+        "instructions": "Line height multiplier (e.g., 1.6)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 1.6,
+        "step": 0.1,
+        "min": 1,
+        "max": 2.5
+      },
+      {
+        "key": "field_hj_h1_size",
+        "label": "H1 Font Size",
+        "name": "h1_size",
+        "type": "number",
+        "instructions": "H1 heading font size in pixels",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 48,
+        "min": 24,
+        "max": 80,
+        "step": 1
+      },
+      {
+        "key": "field_hj_styles_tab",
+        "label": "Styles & Colors",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_primary_color",
+        "label": "Primary Color",
+        "name": "primary_color",
+        "type": "color_picker",
+        "instructions": "Main brand color",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#007bff"
+      },
+      {
+        "key": "field_hj_secondary_color",
+        "label": "Secondary Color",
+        "name": "secondary_color",
+        "type": "color_picker",
+        "instructions": "Secondary brand color",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#6c757d"
+      },
+      {
+        "key": "field_hj_accent_color",
+        "label": "Accent Color",
+        "name": "accent_color",
+        "type": "color_picker",
+        "instructions": "Accent color for highlights",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#ffc107"
+      },
+      {
+        "key": "field_hj_body_text_color",
+        "label": "Body Text Color",
+        "name": "body_text_color",
+        "type": "color_picker",
+        "instructions": "Main text color",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#343a40"
+      },
+      {
+        "key": "field_hj_heading_color",
+        "label": "Heading Color",
+        "name": "heading_color",
+        "type": "color_picker",
+        "instructions": "Color for all headings",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#000000"
+      },
+      {
+        "key": "field_hj_background_color",
+        "label": "Background Color",
+        "name": "background_color",
+        "type": "color_picker",
+        "instructions": "Site background color",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "33",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#ffffff"
+      },
+      {
+        "key": "field_hj_button_style",
+        "label": "Button Style",
+        "name": "button_style",
+        "type": "select",
+        "instructions": "Default button appearance",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "filled": "Filled",
+          "outline": "Outline",
+          "gradient": "Gradient"
+        },
+        "default_value": "filled"
+      },
+      {
+        "key": "field_hj_border_radius",
+        "label": "Border Radius",
+        "name": "border_radius",
+        "type": "number",
+        "instructions": "Default border radius in pixels",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 6,
+        "min": 0,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "key": "field_hj_social_tab",
+        "label": "Social Links",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_social_links",
+        "label": "Social Media Links",
+        "name": "social_links",
+        "type": "repeater",
+        "instructions": "Add social media links",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        },
+        "collapsed": "",
+        "min": 0,
+        "max": 0,
+        "layout": "table",
+        "button_label": "Add Social Link",
+        "sub_fields": [
+          {
+            "key": "field_hj_social_platform",
+            "label": "Platform",
+            "name": "platform",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "30",
+              "class": "",
+              "id": ""
+            },
+            "choices": {
+              "facebook": "Facebook",
+              "twitter": "Twitter",
+              "instagram": "Instagram",
+              "linkedin": "LinkedIn",
+              "youtube": "YouTube",
+              "tiktok": "TikTok",
+              "pinterest": "Pinterest"
+            },
+            "allow_null": 0,
+            "default_value": "facebook"
+          },
+          {
+            "key": "field_hj_social_url",
+            "label": "URL",
+            "name": "url",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+              "width": "70",
+              "class": "",
+              "id": ""
+            }
+          }
+        ]
+      },
+      {
+        "key": "field_hj_seo_tab",
+        "label": "SEO",
+        "name": "",
+        "type": "tab",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "placement": "top",
+        "endpoint": 0
+      },
+      {
+        "key": "field_hj_google_analytics",
+        "label": "Google Analytics ID",
+        "name": "google_analytics",
+        "type": "text",
+        "instructions": "Enter your Google Analytics tracking ID (e.g., G-XXXXXXXXXX)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        }
+      },
+      {
+        "key": "field_hj_facebook_pixel",
+        "label": "Facebook Pixel ID",
+        "name": "facebook_pixel",
+        "type": "text",
+        "instructions": "Enter your Facebook Pixel ID",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        }
+      },
+      {
+        "key": "field_hj_gtm_id",
+        "label": "Google Tag Manager ID",
+        "name": "gtm_id",
+        "type": "text",
+        "instructions": "Enter your GTM ID (e.g., GTM-XXXXXXX)",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        }
+      },
+      {
+        "key": "field_hj_robots",
+        "label": "Robots Meta",
+        "name": "robots",
+        "type": "checkbox",
+        "instructions": "Control search engine indexing",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "index": "Index",
+          "follow": "Follow"
+        },
+        "default_value": [
+          "index",
+          "follow"
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "options_page",
+          "operator": "==",
+          "value": "hj-theme-settings"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+  }
+]

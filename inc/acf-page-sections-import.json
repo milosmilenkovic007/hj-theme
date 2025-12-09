@@ -1,0 +1,313 @@
+[
+  {
+    "key": "group_hj_page_sections",
+    "title": "Page Sections",
+    "fields": [
+      {
+        "key": "field_hj_page_sections",
+        "label": "Page Sections",
+        "name": "page_sections",
+        "type": "flexible_content",
+        "instructions": "Add sections to build your page",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "button_label": "Add Section",
+        "min": "",
+        "max": "",
+        "layouts": [
+          {
+            "key": "layout_hj_hero",
+            "name": "hero",
+            "label": "Hero Section",
+            "display": "block",
+            "sub_fields": [
+              {
+                "key": "field_hero_title",
+                "label": "Title",
+                "name": "title",
+                "type": "text",
+                "required": 1
+              },
+              {
+                "key": "field_hero_subtitle",
+                "label": "Subtitle",
+                "name": "subtitle",
+                "type": "text"
+              },
+              {
+                "key": "field_hero_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea"
+              },
+              {
+                "key": "field_hero_image",
+                "label": "Image",
+                "name": "image",
+                "type": "image",
+                "return_format": "id"
+              },
+              {
+                "key": "field_hero_cta_text",
+                "label": "CTA Button Text",
+                "name": "cta_text",
+                "type": "text"
+              },
+              {
+                "key": "field_hero_cta_link",
+                "label": "CTA Button Link",
+                "name": "cta_link",
+                "type": "url"
+              },
+              {
+                "key": "field_hero_bg_color",
+                "label": "Background Color",
+                "name": "background_color",
+                "type": "color_picker",
+                "default_value": "#ffffff"
+              }
+            ]
+          },
+          {
+            "key": "layout_hj_cta",
+            "name": "cta",
+            "label": "Call To Action",
+            "display": "block",
+            "sub_fields": [
+              {
+                "key": "field_cta_heading",
+                "label": "Heading",
+                "name": "heading",
+                "type": "text",
+                "required": 1
+              },
+              {
+                "key": "field_cta_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea"
+              },
+              {
+                "key": "field_cta_button_text",
+                "label": "Button Text",
+                "name": "button_text",
+                "type": "text",
+                "required": 1
+              },
+              {
+                "key": "field_cta_button_link",
+                "label": "Button Link",
+                "name": "button_link",
+                "type": "url",
+                "required": 1
+              },
+              {
+                "key": "field_cta_button_style",
+                "label": "Button Style",
+                "name": "button_style",
+                "type": "select",
+                "choices": {
+                  "primary": "Primary",
+                  "secondary": "Secondary",
+                  "outline": "Outline"
+                },
+                "default_value": "primary"
+              },
+              {
+                "key": "field_cta_bg_color",
+                "label": "Background Color",
+                "name": "background_color",
+                "type": "color_picker",
+                "default_value": "#f5f5f5"
+              },
+              {
+                "key": "field_cta_text_color",
+                "label": "Text Color",
+                "name": "text_color",
+                "type": "color_picker",
+                "default_value": "#000000"
+              }
+            ]
+          },
+          {
+            "key": "layout_hj_features",
+            "name": "features",
+            "label": "Features Section",
+            "display": "block",
+            "sub_fields": [
+              {
+                "key": "field_features_heading",
+                "label": "Heading",
+                "name": "heading",
+                "type": "text"
+              },
+              {
+                "key": "field_features_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea"
+              },
+              {
+                "key": "field_features_columns",
+                "label": "Number of Columns",
+                "name": "columns",
+                "type": "select",
+                "choices": {
+                  "2": "2 Columns",
+                  "3": "3 Columns",
+                  "4": "4 Columns"
+                },
+                "default_value": "3"
+              },
+              {
+                "key": "field_features_list",
+                "label": "Features",
+                "name": "features",
+                "type": "repeater",
+                "sub_fields": [
+                  {
+                    "key": "field_feature_icon",
+                    "label": "Icon (HTML or SVG)",
+                    "name": "icon",
+                    "type": "textarea"
+                  },
+                  {
+                    "key": "field_feature_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "required": 1
+                  },
+                  {
+                    "key": "field_feature_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "layout_hj_contact_form",
+            "name": "contact-form",
+            "label": "Contact Form",
+            "display": "block",
+            "sub_fields": [
+              {
+                "key": "field_contact_heading",
+                "label": "Heading",
+                "name": "heading",
+                "type": "text"
+              },
+              {
+                "key": "field_contact_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea"
+              },
+              {
+                "key": "field_contact_form_id",
+                "label": "Form ID (Gravity Forms or WPForms)",
+                "name": "form_id",
+                "type": "number",
+                "required": 1
+              },
+              {
+                "key": "field_contact_bg_color",
+                "label": "Background Color",
+                "name": "background_color",
+                "type": "color_picker",
+                "default_value": "#ffffff"
+              }
+            ]
+          },
+          {
+            "key": "layout_hj_testimonials",
+            "name": "testimonials",
+            "label": "Testimonials Section",
+            "display": "block",
+            "sub_fields": [
+              {
+                "key": "field_testimonials_heading",
+                "label": "Heading",
+                "name": "heading",
+                "type": "text"
+              },
+              {
+                "key": "field_testimonials_description",
+                "label": "Description",
+                "name": "description",
+                "type": "textarea"
+              },
+              {
+                "key": "field_testimonials_list",
+                "label": "Testimonials",
+                "name": "testimonials",
+                "type": "repeater",
+                "sub_fields": [
+                  {
+                    "key": "field_testimonial_text",
+                    "label": "Testimonial Text",
+                    "name": "text",
+                    "type": "textarea",
+                    "required": 1
+                  },
+                  {
+                    "key": "field_testimonial_image",
+                    "label": "Author Image",
+                    "name": "image",
+                    "type": "image",
+                    "return_format": "id"
+                  },
+                  {
+                    "key": "field_testimonial_name",
+                    "label": "Author Name",
+                    "name": "name",
+                    "type": "text",
+                    "required": 1
+                  },
+                  {
+                    "key": "field_testimonial_title",
+                    "label": "Author Title",
+                    "name": "title",
+                    "type": "text"
+                  },
+                  {
+                    "key": "field_testimonial_rating",
+                    "label": "Rating (1-5)",
+                    "name": "rating",
+                    "type": "number",
+                    "min": 1,
+                    "max": 5,
+                    "default_value": 5
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true
+  }
+]

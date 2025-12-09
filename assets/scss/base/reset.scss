@@ -1,0 +1,53 @@
+/**
+ * Reset & Default Styles
+ */
+@use '../variables' as *;
+@use 'sass:color';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: $font-size-base;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $color-dark;
+	background-color: $color-white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+
+	&.img-responsive {
+		width: 100%;
+		height: auto;
+	}
+}
+
+a {
+	color: $color-primary;
+	text-decoration: none;
+	transition: $transition-base;
+
+	&:hover {
+		color: color.adjust($color-primary, $lightness: -10%);
+	}
+}
+
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}

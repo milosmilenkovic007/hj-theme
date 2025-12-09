@@ -1,0 +1,130 @@
+/*
+ * Theme Name: HJ Theme
+ * Theme URI: 
+ * Author: Milos Milenkovic
+ * Author URI: https://milos.live
+ * Description: Custom modular theme with ACF Pro and flexible layouts
+ * Version: 1.0.0
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: hj-theme
+ * Domain Path: /languages
+ */
+
+/* Main styles will be compiled from SCSS */
+
+/* Header layout */
+.pro-header {
+	border-bottom: 1px solid #e5e7eb;
+	background: #ffffff;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.pro-header .header-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 14px 24px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	justify-content: space-between;
+}
+
+.pro-header .header-brand {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.pro-header .brand-text {
+	font-weight: 700;
+	font-size: 18px;
+	text-decoration: none;
+	color: #111827;
+}
+
+.pro-header .header-nav {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.pro-header .header-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 18px;
+}
+
+.pro-header .header-menu a {
+	text-decoration: none;
+	color: #374151;
+	font-weight: 500;
+}
+
+.pro-header .header-cta .btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 16px;
+	border-radius: 999px;
+	background: #111827;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	border: 1px solid #111827;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pro-header .header-cta .btn:hover {
+	background: transparent;
+	color: #111827;
+}
+
+.pro-header .header-toggle {
+	display: none;
+	flex-direction: column;
+	gap: 4px;
+	width: 42px;
+	height: 36px;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+}
+
+.pro-header .header-toggle span {
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: #111827;
+}
+
+@media (max-width: 900px) {
+	.pro-header .header-inner {
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+	.pro-header .header-nav {
+		width: 100%;
+		order: 3;
+		justify-content: flex-start;
+	}
+	.pro-header .header-menu {
+		flex-direction: column;
+		gap: 12px;
+	}
+	.pro-header .header-cta {
+		order: 2;
+		margin-left: auto;
+	}
+	.pro-header .header-toggle {
+		display: inline-flex;
+		order: 1;
+		margin-left: auto;
+	}
+}

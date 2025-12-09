@@ -1,0 +1,122 @@
+/**
+ * Professional footer styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.pro-footer {
+  background: var(--footer-bg, #0b1220);
+  color: #e5e7eb;
+  padding: $spacing-xl 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  a {
+    color: inherit;
+  }
+
+  .footer-top {
+    display: grid;
+    gap: $spacing-xl;
+    align-items: flex-start;
+    padding-bottom: $spacing-xl;
+
+    @include media-md {
+      grid-template-columns: minmax(220px, 1fr) 2fr;
+    }
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: $spacing-md;
+
+    .footer-logo-img {
+      max-height: 52px;
+      width: auto;
+    }
+
+    .footer-brand-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .footer-description {
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+
+  .footer-nav {
+    width: 100%;
+  }
+
+  .footer-menu {
+    --footer-columns: 3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--footer-columns), minmax(0, 1fr));
+    gap: $spacing-md $spacing-lg;
+
+    &.columns-2 { --footer-columns: 2; }
+    &.columns-3 { --footer-columns: 3; }
+    &.columns-4 { --footer-columns: 4; }
+
+    li {
+      a {
+        display: inline-block;
+        color: #d1d5db;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          color: #ffffff;
+          transform: translateX(2px);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: var(--footer-bottom-bg, #0a0f1c);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: $spacing-lg;
+
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $spacing-md;
+      padding: $spacing-md 0;
+
+      @include media-sm {
+        padding: $spacing-md 0;
+      }
+
+      @include media-md {
+        padding: $spacing-lg 0;
+      }
+    }
+
+    .footer-copyright {
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .footer-menu {
+      --footer-columns: 2;
+      gap: $spacing-md;
+    }
+
+    .footer-bottom-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/**
+ * Main SCSS file
+ * This file imports all module and component styles
+ */
+
+/* ============================================
+   Variables & Configuration
+   ============================================ */
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/colors';
+
+/* ============================================
+   Layout Components
+   ============================================ */
+@use 'layout/container';
+@use 'layout/grid';
+@use 'layout/buttons';
+@use 'layout/header';
+@use 'layout/footer';
+
+/* ============================================
+   Module Styles
+   ============================================ */
+@use 'modules/hero';
+@use 'modules/cta';
+@use 'modules/features';
+@use 'modules/contact-form';
+@use 'modules/testimonials';
+
+/* ============================================
+   Animations
+   ============================================ */
+@use 'animations/fade-in';
+@use 'animations/transitions';

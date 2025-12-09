@@ -1,0 +1,38 @@
+/**
+ * CTA Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.module-cta {
+	padding: 60px 0;
+	text-align: center;
+
+	@include media-lg {
+		padding: 80px 0;
+	}
+
+	.cta-wrapper {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.cta-heading {
+		font-size: 2rem;
+		margin-bottom: $spacing-md;
+
+		@include media-md {
+			font-size: 2.5rem;
+		}
+	}
+
+	.cta-description {
+		font-size: 1.1rem;
+		margin-bottom: $spacing-lg;
+		line-height: 1.8;
+	}
+
+	.btn {
+		margin-top: $spacing-lg;
+	}
+}

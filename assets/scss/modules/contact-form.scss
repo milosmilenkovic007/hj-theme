@@ -1,0 +1,59 @@
+/**
+ * Contact Form Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../layout/buttons' as buttons;
+
+.module-contact-form {
+	padding: 60px 0;
+
+	@include media-lg {
+		padding: 80px 0;
+	}
+
+	.contact-form-wrapper {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.form-container {
+		margin-top: $spacing-xxl;
+
+		form {
+			display: flex;
+			flex-direction: column;
+
+			input,
+			textarea,
+			select {
+				padding: $spacing-md;
+				margin-bottom: $spacing-md;
+				border: 1px solid #ddd;
+				border-radius: $border-radius-md;
+				font-size: $font-size-base;
+				font-family: $font-family-base;
+				transition: $transition-fast;
+
+				&:focus {
+					outline: none;
+					border-color: $color-primary;
+					box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+				}
+			}
+
+			textarea {
+				resize: vertical;
+				min-height: 120px;
+			}
+
+			button,
+			input[type='submit'] {
+				@include buttons.btn-base;
+				@include buttons.btn-primary-variant;
+				align-self: center;
+				margin-top: $spacing-lg;
+			}
+		}
+	}
+}

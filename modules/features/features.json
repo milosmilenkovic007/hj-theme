@@ -1,0 +1,58 @@
+{
+  "name": "features",
+  "label": "Features Section",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_features_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text"
+    },
+    {
+      "key": "field_features_description",
+      "label": "Description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_features_columns",
+      "label": "Number of Columns",
+      "name": "columns",
+      "type": "select",
+      "choices": {
+        "2": "2 Columns",
+        "3": "3 Columns",
+        "4": "4 Columns"
+      },
+      "default_value": "3"
+    },
+    {
+      "key": "field_features_list",
+      "label": "Features",
+      "name": "features",
+      "type": "repeater",
+      "sub_fields": [
+        {
+          "key": "field_feature_icon",
+          "label": "Icon (HTML or SVG)",
+          "name": "icon",
+          "type": "textarea"
+        },
+        {
+          "key": "field_feature_title",
+          "label": "Title",
+          "name": "title",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "field_feature_description",
+          "label": "Description",
+          "name": "description",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}

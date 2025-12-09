@@ -1,0 +1,16 @@
+/**
+ * Transitions
+ */
+@use '../variables' as *;
+
+.transition-all {
+	transition: $transition-base;
+}
+
+.transition-fast {
+	transition: $transition-fast;
+}
+
+.transition-slow {
+	transition: $transition-slow;
+}
