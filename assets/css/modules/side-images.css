@@ -21,6 +21,9 @@
 }
 .module-side-images .side-images-header.text-center {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .module-side-images .side-images-header.text-right {
   text-align: right;
@@ -29,6 +32,7 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  display: inline-block;
 }
 @media (min-width: 768px) {
   .module-side-images .side-images-heading {
@@ -37,7 +41,9 @@
 }
 .module-side-images .side-images-subheading {
   font-size: 1.25rem;
-  max-width: 800px;
+  max-width: none;
+  display: inline-block;
+  margin-top: 0.5rem;
 }
 .text-center .module-side-images .side-images-subheading {
   margin-left: auto;

@@ -5,7 +5,7 @@
   "license": "GPL-2.0-or-later",
   "scripts": {
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
+    "build": "npm run sass:build && webpack --mode production",
     "sass": "sass --watch assets/scss:assets/css",
     "sass:build": "sass --no-source-map assets/scss:assets/css"
   },

@@ -51,13 +51,47 @@ function hj_get_footer_logo() {
 	return hj_get_setting( 'footer_logo' );
 }
 
+// Legacy: footer_menu removed; keep function returning 0 for back-compat.
 function hj_get_footer_menu_id() {
-	return (int) hj_get_setting( 'footer_menu', 0 );
+	return 0;
 }
 
 function hj_get_footer_columns() {
 	$columns = (int) hj_get_setting( 'footer_columns', 3 );
 	return $columns >= 2 && $columns <= 4 ? $columns : 3;
+}
+
+function hj_get_footer_column_menu_ids() {
+	$columns = hj_get_footer_columns();
+	$ids = array();
+	for ( $i = 1; $i <= $columns; $i++ ) {
+		$ids[$i] = (int) hj_get_setting( 'footer_menu_col_' . $i, 0 );
+	}
+	return $ids;
+}
+
+function hj_get_footer_column_titles() {
+	$columns = hj_get_footer_columns();
+	$titles = array();
+	for ( $i = 1; $i <= $columns; $i++ ) {
+		$titles[$i] = (string) hj_get_setting( 'footer_title_col_' . $i, '' );
+	}
+	return $titles;
+}
+
+function hj_get_footer_contact_config() {
+	$column = (int) hj_get_setting( 'footer_contact_column', 0 );
+	$title = (string) hj_get_setting( 'footer_contact_title', '' );
+	$address = (string) hj_get_setting( 'footer_contact_address', '' );
+	$email = (string) hj_get_setting( 'footer_contact_email', '' );
+	$phone = (string) hj_get_setting( 'footer_contact_phone', '' );
+	return array(
+		'column' => $column,
+		'title' => $title,
+		'address' => $address,
+		'email' => $email,
+		'phone' => $phone,
+	);
 }
 
 function hj_show_footer_widgets() {
@@ -74,6 +108,10 @@ function hj_get_footer_background() {
 
 function hj_get_footer_bottom_bar_color() {
 	return hj_get_setting( 'footer_bottom_bar_color', '#0a0f1c' );
+}
+
+function hj_get_footer_certificate() {
+	return (int) hj_get_setting( 'footer_certificate', 0 );
 }
 
 /**

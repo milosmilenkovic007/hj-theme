@@ -101,28 +101,15 @@
       "default_value": ""
     },
     {
-      "key": "field_hj_footer_menu",
-      "label": "Footer Menu",
-      "name": "footer_menu",
-      "type": "nav_menu",
-      "instructions": "Select which menu to display in the footer",
+      "key": "field_hj_footer_certificate",
+      "label": "Footer Certificate Image",
+      "name": "footer_certificate",
+      "type": "image",
+      "instructions": "Upload a certificate or accreditation image to display in the footer brand area.",
       "required": 0,
-      "save_format": "id",
-      "container": "",
-      "menu": ""
-    },
-    {
-      "key": "field_hj_footer_navigation",
-      "label": "Footer Navigation (Block)",
-      "name": "footer_navigation",
-      "type": "post_object",
-      "instructions": "Select a Navigation block (Navigation post) if you use the block editor menus",
-      "required": 0,
-      "post_type": ["wp_navigation"],
       "return_format": "id",
-      "ui": 1,
-      "multiple": 0,
-      "allow_null": 1
+      "preview_size": "medium",
+      "library": "all"
     },
     {
       "key": "field_hj_footer_columns",
