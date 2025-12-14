@@ -1,17 +1,17 @@
-/* Error: Undefined variable.
- *   ,
- * 6 |     transition: $transition-base;
- *   |                 ^^^^^^^^^^^^^^^^
- *   '
- *   assets/scss/animations/transitions.scss 6:14  root stylesheet */
+/**
+ * Transitions
+ */
+/**
+ * Variables
+ */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      transition: $transition-base;\a   \2502                  ^^^^^^^^^^^^^^^^\a   \2575 \a   assets/scss/animations/transitions.scss 6:14  root stylesheet";
+.transition-fast {
+  transition: all 0.15s ease-in-out;
+}
+
+.transition-slow {
+  transition: all 0.5s ease-in-out;
 }

@@ -1,17 +1,61 @@
-/* Error: Undefined variable.
- *   ,
- * 6 |     color: $color-primary;
- *   |            ^^^^^^^^^^^^^^
- *   '
- *   assets/scss/base/colors.scss 6:9  root stylesheet */
+/**
+ * Colors
+ */
+/**
+ * Variables
+ */
+.text-primary {
+  color: #007bff;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      color: $color-primary;\a   \2502             ^^^^^^^^^^^^^^\a   \2575 \a   assets/scss/base/colors.scss 6:9  root stylesheet";
+.text-secondary {
+  color: #6c757d;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+
+.text-info {
+  color: #17a2b8;
+}
+
+.text-light {
+  color: #f8f9fa;
+}
+
+.text-dark {
+  color: #343a40;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-primary {
+  background-color: #007bff;
+}
+
+.bg-secondary {
+  background-color: #6c757d;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.bg-dark {
+  background-color: #343a40;
+}
+
+.bg-white {
+  background-color: #ffffff;
 }

@@ -1,18 +1,42 @@
-/* Error: Undefined mixin.
- *    ,
- * 9  | /     @include media-lg {
- * 10 | |         padding: 80px 0;
- * 11 | \     }
- *    '
- *   assets/scss/modules/cta.scss 9:2  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 9  \2502  \250c      @include media-lg {\a 10 \2502  \2502          padding: 80px 0;\a 11 \2502  \2514      }\a    \2575 \a   assets/scss/modules/cta.scss 9:2  root stylesheet";
+/**
+ * CTA Module Styles
+ */
+/**
+ * Variables
+ */
+/**
+ * CTA Module Styles
+ */
+/**
+ * Mixins
+ */
+.module-cta {
+  padding: 60px 0;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .module-cta {
+    padding: 80px 0;
+  }
+}
+.module-cta .cta-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.module-cta .cta-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .module-cta .cta-heading {
+    font-size: 2.5rem;
+  }
+}
+.module-cta .cta-description {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+.module-cta .btn {
+  margin-top: 1.5rem;
 }

@@ -1,18 +1,163 @@
-/* Error: Undefined mixin.
- *    ,
- * 8  | /     @include media-lg {
- * 9  | |         padding: 80px 0;
- * 10 | \     }
- *    '
- *   assets/scss/modules/contact-form.scss 8:2  root stylesheet */
+/**
+ * Contact Form Module Styles
+ */
+/**
+ * Variables
+ */
+/**
+ * Contact Form Module Styles
+ */
+/**
+ * Mixins
+ */
+/**
+ * Contact Form Module Styles
+ */
+/**
+ * Buttons
+ */
+.btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn {
+  border-radius: var(--hj-btn-radius, 6px);
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 8  \2502  \250c      @include media-lg {\a 9  \2502  \2502          padding: 80px 0;\a 10 \2502  \2514      }\a    \2575 \a   assets/scss/modules/contact-form.scss 8:2  root stylesheet";
+.btn-primary {
+  background-color: var(--hj-btn-primary-bg, #007bff);
+  color: var(--hj-btn-primary-text, #ffffff);
+  border: 2px solid var(--hj-btn-border-color, transparent);
+}
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--hj-btn-primary-bg, #007bff) 90%, black 10%);
+  color: var(--hj-btn-primary-text, #ffffff);
+}
+
+.btn-secondary {
+  background-color: var(--hj-btn-secondary-bg, #6c757d);
+  color: var(--hj-btn-secondary-text, #ffffff);
+  border: 2px solid var(--hj-btn-border-color, transparent);
+}
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--hj-btn-secondary-bg, #6c757d) 90%, black 10%);
+  color: var(--hj-btn-secondary-text, #ffffff);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--hj-btn-border-color, #007bff);
+  border: 2px solid var(--hj-btn-border-color, #007bff);
+}
+.btn-outline:hover {
+  background-color: var(--hj-btn-border-color, #007bff);
+  color: #ffffff;
+}
+
+.btn-lg {
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.module-contact-form {
+  padding: 60px 0;
+}
+@media (min-width: 992px) {
+  .module-contact-form {
+    padding: 80px 0;
+  }
+}
+.module-contact-form .contact-form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.module-contact-form .form-container {
+  margin-top: 3rem;
+}
+.module-contact-form .form-container form {
+  display: flex;
+  flex-direction: column;
+}
+.module-contact-form .form-container form input,
+.module-contact-form .form-container form textarea,
+.module-contact-form .form-container form select {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: all 0.15s ease-in-out;
+}
+.module-contact-form .form-container form input:focus,
+.module-contact-form .form-container form textarea:focus,
+.module-contact-form .form-container form select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+.module-contact-form .form-container form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.module-contact-form .form-container form button,
+.module-contact-form .form-container form input[type=submit] {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.module-contact-form .form-container form button:hover,
+.module-contact-form .form-container form input[type=submit]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.module-contact-form .form-container form button:active,
+.module-contact-form .form-container form input[type=submit]:active {
+  transform: translateY(0);
+}
+.module-contact-form .form-container form button,
+.module-contact-form .form-container form input[type=submit] {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.module-contact-form .form-container form button:hover,
+.module-contact-form .form-container form input[type=submit]:hover {
+  background-color: rgb(0, 98.4, 204);
+  color: #ffffff;
+}
+.module-contact-form .form-container form button,
+.module-contact-form .form-container form input[type=submit] {
+  align-self: center;
+  margin-top: 1.5rem;
 }

@@ -1,0 +1,94 @@
+{
+  "name": "side_images",
+  "label": "Side Images Section",
+  "display": "block",
+  "sub_fields": [
+    {
+      "key": "field_side_images_heading",
+      "label": "Heading",
+      "name": "heading",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "field_side_images_subheading",
+      "label": "Subheading",
+      "name": "subheading",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "field_side_images_alignment",
+      "label": "Heading Alignment",
+      "name": "heading_alignment",
+      "type": "select",
+      "choices": {
+        "left": "Left",
+        "center": "Center",
+        "right": "Right"
+      },
+      "default_value": "center"
+    },
+    {
+      "key": "field_side_images_items",
+      "label": "Side Image Items",
+      "name": "items",
+      "type": "repeater",
+      "layout": "block",
+      "button_label": "Add Item",
+      "sub_fields": [
+        {
+          "key": "field_side_images_image_position",
+          "label": "Image Position",
+          "name": "image_position",
+          "type": "radio",
+          "choices": {
+            "left": "Left Side",
+            "right": "Right Side"
+          },
+          "default_value": "left",
+          "layout": "horizontal"
+        },
+        {
+          "key": "field_side_images_image",
+          "label": "Image",
+          "name": "image",
+          "type": "image",
+          "required": true,
+          "return_format": "id"
+        },
+        {
+          "key": "field_side_images_content",
+          "label": "Content",
+          "name": "content",
+          "type": "wysiwyg",
+          "required": true,
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 0
+        },
+        {
+          "key": "field_side_images_button_text",
+          "label": "Button Text",
+          "name": "button_text",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "field_side_images_button_link",
+          "label": "Button Link",
+          "name": "button_link",
+          "type": "url",
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "field_side_images_bg_color",
+      "label": "Background Color",
+      "name": "background_color",
+      "type": "color_picker",
+      "default_value": "#ffffff"
+    }
+  ]
+}

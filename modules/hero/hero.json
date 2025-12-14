@@ -23,11 +23,48 @@
       "type": "textarea"
     },
     {
+      "key": "field_hero_media_type",
+      "label": "Media Type",
+      "name": "media_type",
+      "type": "radio",
+      "choices": {
+        "image": "Image",
+        "video": "YouTube Video"
+      },
+      "default_value": "image",
+      "layout": "horizontal"
+    },
+    {
       "key": "field_hero_image",
-      "label": "Background Image",
+      "label": "Image",
       "name": "image",
       "type": "image",
-      "return_format": "id"
+      "return_format": "id",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_hero_media_type",
+            "operator": "==",
+            "value": "image"
+          }
+        ]
+      ]
+    },
+    {
+      "key": "field_hero_youtube_url",
+      "label": "YouTube Video URL",
+      "name": "youtube_url",
+      "type": "url",
+      "instructions": "Enter the full YouTube URL (e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_hero_media_type",
+            "operator": "==",
+            "value": "video"
+          }
+        ]
+      ]
     },
     {
       "key": "field_hero_cta_text",

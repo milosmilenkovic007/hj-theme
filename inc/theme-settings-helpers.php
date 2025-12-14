@@ -137,6 +137,14 @@ function hj_get_border_radius() {
 	return hj_get_setting( 'border_radius', 6 );
 }
 
+function hj_get_button_radius() {
+	return hj_get_setting( 'button_radius', 6 );
+}
+
+function hj_get_button_border_color() {
+	return hj_get_setting( 'button_border_color', '#007bff' );
+}
+
 /**
  * Get social links
  */
@@ -193,6 +201,8 @@ function hj_output_theme_css() {
 	$body_size = hj_get_body_font_size();
 	$h1_size = hj_get_h1_size();
 	$radius = hj_get_border_radius();
+	$btn_radius = hj_get_button_radius();
+	$btn_border_color = hj_get_button_border_color();
 	$btn_primary_bg = hj_get_setting( 'button_primary_bg', '#007bff' );
 	$btn_primary_text = hj_get_setting( 'button_primary_text', '#ffffff' );
 	$btn_secondary_bg = hj_get_setting( 'button_secondary_bg', '#6c757d' );
@@ -210,6 +220,8 @@ function hj_output_theme_css() {
 			--hj-body-size: <?php echo absint( $body_size ); ?>px;
 			--hj-h1-size: <?php echo absint( $h1_size ); ?>px;
 			--hj-radius: <?php echo absint( $radius ); ?>px;
+			--hj-btn-radius: <?php echo absint( $btn_radius ); ?>px;
+			--hj-btn-border-color: <?php echo esc_attr( $btn_border_color ); ?>;
 			--hj-btn-primary-bg: <?php echo esc_attr( $btn_primary_bg ); ?>;
 			--hj-btn-primary-text: <?php echo esc_attr( $btn_primary_text ); ?>;
 			--hj-btn-secondary-bg: <?php echo esc_attr( $btn_secondary_bg ); ?>;

@@ -22,8 +22,11 @@ get_header();
 							the_row();
 							$layout = get_row_layout();
 							
+							// Konvertuj underscore u dash za folder name
+							$folder_name = str_replace( '_', '-', $layout );
+							
 							// Učitaj modul fajl
-							$module_path = HJ_THEME_DIR . '/modules/' . $layout . '/' . $layout . '.php';
+							$module_path = HJ_THEME_DIR . '/modules/' . $folder_name . '/' . $folder_name . '.php';
 							if ( file_exists( $module_path ) ) {
 								include $module_path;
 							}

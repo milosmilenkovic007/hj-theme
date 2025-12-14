@@ -1,18 +1,97 @@
-/* Error: Undefined mixin.
- *    ,
- * 8  | /     @include media-lg {
- * 9  | |         padding: 80px 0;
- * 10 | \     }
- *    '
- *   assets/scss/modules/features.scss 8:2  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 8  \2502  \250c      @include media-lg {\a 9  \2502  \2502          padding: 80px 0;\a 10 \2502  \2514      }\a    \2575 \a   assets/scss/modules/features.scss 8:2  root stylesheet";
+/**
+ * Features Module Styles
+ */
+/**
+ * Variables
+ */
+/**
+ * Features Module Styles
+ */
+/**
+ * Mixins
+ */
+.module-features {
+  padding: 60px 0;
+}
+@media (min-width: 992px) {
+  .module-features {
+    padding: 80px 0;
+  }
+}
+.module-features .features-grid, .module-features .features-grid-4, .module-features .features-grid-3, .module-features .features-grid-2 {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .module-features .features-grid, .module-features .features-grid-4, .module-features .features-grid-3, .module-features .features-grid-2 {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .module-features .features-grid, .module-features .features-grid-4, .module-features .features-grid-3, .module-features .features-grid-2 {
+    gap: 2rem;
+  }
+}
+.module-features .features-grid-2 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .module-features .features-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.module-features .features-grid-3 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 576px) {
+  .module-features .features-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .module-features .features-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.module-features .features-grid-4 {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 576px) {
+  .module-features .features-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .module-features .features-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.module-features .feature-item {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.module-features .feature-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+.module-features .feature-item .feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.module-features .feature-item .feature-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.module-features .feature-item .feature-description {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.8;
 }

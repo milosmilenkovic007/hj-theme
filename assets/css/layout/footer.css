@@ -1,0 +1,119 @@
+/**
+ * Professional footer styles
+ */
+/**
+ * Variables
+ */
+/**
+ * Professional footer styles
+ */
+/**
+ * Mixins
+ */
+.pro-footer {
+  background: var(--footer-bg, #0b1220);
+  color: #e5e7eb;
+  padding: 2rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.pro-footer a {
+  color: inherit;
+}
+.pro-footer .footer-top {
+  display: grid;
+  gap: 2rem;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .pro-footer .footer-top {
+    grid-template-columns: minmax(220px, 1fr) 2fr;
+  }
+}
+.pro-footer .footer-brand {
+  display: grid;
+  gap: 1rem;
+}
+.pro-footer .footer-brand .footer-logo-img {
+  max-height: 52px;
+  width: auto;
+}
+.pro-footer .footer-brand .footer-brand-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.pro-footer .footer-brand .footer-description {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin: 0;
+}
+.pro-footer .footer-nav {
+  width: 100%;
+}
+.pro-footer .footer-menu {
+  --footer-columns: 3;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--footer-columns), minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+.pro-footer .footer-menu.columns-2 {
+  --footer-columns: 2;
+}
+.pro-footer .footer-menu.columns-3 {
+  --footer-columns: 3;
+}
+.pro-footer .footer-menu.columns-4 {
+  --footer-columns: 4;
+}
+.pro-footer .footer-menu li a {
+  display: inline-block;
+  color: #d1d5db;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.pro-footer .footer-menu li a:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+.pro-footer .footer-bottom {
+  background: var(--footer-bottom-bg, #0a0f1c);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 1.5rem;
+}
+.pro-footer .footer-bottom .footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+@media (min-width: 576px) {
+  .pro-footer .footer-bottom .footer-bottom-inner {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 768px) {
+  .pro-footer .footer-bottom .footer-bottom-inner {
+    padding: 1.5rem 0;
+  }
+}
+.pro-footer .footer-bottom .footer-copyright {
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+@media (max-width: 768px) {
+  .pro-footer .footer-menu {
+    --footer-columns: 2;
+    gap: 1rem;
+  }
+  .pro-footer .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,17 +1,51 @@
-/* Error: Undefined variable.
- *    ,
- * 12 |     font-size: $font-size-base;
- *    |                ^^^^^^^^^^^^^^^
- *    '
- *   assets/scss/base/reset.scss 12:13  root stylesheet */
+/**
+ * Reset & Default Styles
+ */
+/**
+ * Variables
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #343a40;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 12 \2502      font-size: $font-size-base;\a    \2502                 ^^^^^^^^^^^^^^^\a    \2575 \a   assets/scss/base/reset.scss 12:13  root stylesheet";
+}
+img.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: rgb(0, 98.4, 204);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }

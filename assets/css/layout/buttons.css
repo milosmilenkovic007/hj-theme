@@ -1,17 +1,70 @@
-/* Error: Undefined variable.
- *   ,
- * 7 |     padding: $spacing-md $spacing-lg;
- *   |              ^^^^^^^^^^^
- *   '
- *   assets/scss/layout/buttons.scss 7:11  root stylesheet */
+/**
+ * Buttons
+ */
+/**
+ * Variables
+ */
+.btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn {
+  border-radius: var(--hj-btn-radius, 6px);
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 7 \2502      padding: $spacing-md $spacing-lg;\a   \2502               ^^^^^^^^^^^\a   \2575 \a   assets/scss/layout/buttons.scss 7:11  root stylesheet";
+.btn-primary {
+  background-color: var(--hj-btn-primary-bg, #007bff);
+  color: var(--hj-btn-primary-text, #ffffff);
+  border: 2px solid var(--hj-btn-border-color, transparent);
+}
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--hj-btn-primary-bg, #007bff) 90%, black 10%);
+  color: var(--hj-btn-primary-text, #ffffff);
+}
+
+.btn-secondary {
+  background-color: var(--hj-btn-secondary-bg, #6c757d);
+  color: var(--hj-btn-secondary-text, #ffffff);
+  border: 2px solid var(--hj-btn-border-color, transparent);
+}
+.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--hj-btn-secondary-bg, #6c757d) 90%, black 10%);
+  color: var(--hj-btn-secondary-text, #ffffff);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--hj-btn-border-color, #007bff);
+  border: 2px solid var(--hj-btn-border-color, #007bff);
+}
+.btn-outline:hover {
+  background-color: var(--hj-btn-border-color, #007bff);
+  color: #ffffff;
+}
+
+.btn-lg {
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
 }
