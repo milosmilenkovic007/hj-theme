@@ -89,7 +89,7 @@ hj-theme/
 - Responsive grid layout
 
 ### 4. **Contact Form**
-- Integration with Gravity Forms or WPForms
+- Integration with Fluent Forms
 - Just add form ID - theme handles the rest
 - Customizable background color
 - Form title and description
@@ -162,7 +162,7 @@ npm run sass:build
 - Responsive grid
 
 ### 4. Contact Form Module
-- Supports Gravity Forms and WPForms
+- Supports Fluent Forms
 - Heading and description
 - Background color customization
 

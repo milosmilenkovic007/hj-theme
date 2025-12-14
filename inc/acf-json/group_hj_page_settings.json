@@ -1,0 +1,31 @@
+{
+  "key": "group_hj_page_settings",
+  "title": "Page Settings",
+  "fields": [
+    {
+      "key": "field_hj_page_subheading",
+      "label": "Page Subheading",
+      "name": "page_subheading",
+      "type": "text",
+      "instructions": "Optional subheading shown above the page title.",
+      "required": 0,
+      "default_value": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Per-page settings"
+}

@@ -155,6 +155,130 @@
       "default_value": ""
     },
     {
+      "key": "field_hj_footer_columns_divider",
+      "label": "Column Configuration",
+      "name": "",
+      "type": "message",
+      "message": "Configure which menu appears in each footer column."
+    },
+    {
+      "key": "field_hj_footer_title_col_1",
+      "label": "Footer Column 1 Title",
+      "name": "footer_title_col_1",
+      "type": "text",
+      "placeholder": "Column 1",
+      "wrapper": {"width": "25"}
+    },
+    {
+      "key": "field_hj_footer_menu_col_1",
+      "label": "Footer Column 1 Menu",
+      "name": "footer_menu_col_1",
+      "type": "select",
+      "ui": 1,
+      "allow_null": 1,
+      "wrapper": {"width": "25"},
+      "conditional_logic": 0
+    },
+    {
+      "key": "field_hj_footer_title_col_2",
+      "label": "Footer Column 2 Title",
+      "name": "footer_title_col_2",
+      "type": "text",
+      "placeholder": "Column 2",
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": ">=", "value": "2"}]]
+    },
+    {
+      "key": "field_hj_footer_menu_col_2",
+      "label": "Footer Column 2 Menu",
+      "name": "footer_menu_col_2",
+      "type": "select",
+      "ui": 1,
+      "allow_null": 1,
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": ">=", "value": "2"}]]
+    },
+    {
+      "key": "field_hj_footer_title_col_3",
+      "label": "Footer Column 3 Title",
+      "name": "footer_title_col_3",
+      "type": "text",
+      "placeholder": "Column 3",
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": ">=", "value": "3"}]]
+    },
+    {
+      "key": "field_hj_footer_menu_col_3",
+      "label": "Footer Column 3 Menu",
+      "name": "footer_menu_col_3",
+      "type": "select",
+      "ui": 1,
+      "allow_null": 1,
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": ">=", "value": "3"}]]
+    },
+    {
+      "key": "field_hj_footer_title_col_4",
+      "label": "Footer Column 4 Title",
+      "name": "footer_title_col_4",
+      "type": "text",
+      "placeholder": "Column 4",
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": "==", "value": "4"}]]
+    },
+    {
+      "key": "field_hj_footer_menu_col_4",
+      "label": "Footer Column 4 Menu",
+      "name": "footer_menu_col_4",
+      "type": "select",
+      "ui": 1,
+      "allow_null": 1,
+      "wrapper": {"width": "25"},
+      "conditional_logic": [[{"field": "footer_columns", "operator": "==", "value": "4"}]]
+    },
+    {
+      "key": "field_hj_footer_contact_column",
+      "label": "Contact Column",
+      "name": "footer_contact_column",
+      "type": "select",
+      "choices": {"0": "Disabled", "1": "Column 1", "2": "Column 2", "3": "Column 3", "4": "Column 4"},
+      "default_value": "0",
+      "ui": 1,
+      "wrapper": {"width": "25"}
+    },
+    {
+      "key": "field_hj_footer_contact_title",
+      "label": "Contact Title",
+      "name": "footer_contact_title",
+      "type": "text",
+      "placeholder": "Contact Us",
+      "conditional_logic": [[{"field": "field_hj_footer_contact_column", "operator": "!=", "value": "0"}]]
+    },
+    {
+      "key": "field_hj_footer_contact_address",
+      "label": "Contact Address",
+      "name": "footer_contact_address",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "br",
+      "conditional_logic": [[{"field": "field_hj_footer_contact_column", "operator": "!=", "value": "0"}]]
+    },
+    {
+      "key": "field_hj_footer_contact_email",
+      "label": "Contact Email",
+      "name": "footer_contact_email",
+      "type": "email",
+      "conditional_logic": [[{"field": "field_hj_footer_contact_column", "operator": "!=", "value": "0"}]]
+    },
+    {
+      "key": "field_hj_footer_contact_phone",
+      "label": "Contact Phone",
+      "name": "footer_contact_phone",
+      "type": "text",
+      "placeholder": "+90 555 086 91 12",
+      "conditional_logic": [[{"field": "field_hj_footer_contact_column", "operator": "!=", "value": "0"}]]
+    },
+    {
       "key": "field_hj_typography_tab",
       "label": "Typography",
       "name": "",
@@ -219,6 +343,26 @@
       "required": 0,
       "wrapper": {"width": "33.333"},
       "default_value": "#ff6b6b"
+    },
+    {
+      "key": "field_hj_link_hover_color",
+      "label": "Link Hover Color",
+      "name": "link_hover_color",
+      "type": "color_picker",
+      "instructions": "Color applied to links on hover",
+      "required": 0,
+      "wrapper": {"width": "33.333"},
+      "default_value": "#ff6b6b"
+    },
+    {
+      "key": "field_hj_footer_copyright_color",
+      "label": "Footer Copyright Color",
+      "name": "footer_copyright_color",
+      "type": "color_picker",
+      "instructions": "Text color for the copyright line in the footer",
+      "required": 0,
+      "wrapper": {"width": "33.333"},
+      "default_value": "#9ca3af"
     },
     {
       "key": "field_hj_button_primary_bg",

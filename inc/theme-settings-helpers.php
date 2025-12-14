@@ -152,12 +152,20 @@ function hj_get_accent_color() {
 	return hj_get_setting( 'accent_color', '#ffc107' );
 }
 
+function hj_get_link_hover_color() {
+	return hj_get_setting( 'link_hover_color', '#ff6b6b' );
+}
+
 function hj_get_body_text_color() {
 	return hj_get_setting( 'body_text_color', '#343a40' );
 }
 
 function hj_get_heading_color() {
 	return hj_get_setting( 'heading_color', '#000000' );
+}
+
+function hj_get_footer_copyright_color() {
+	return hj_get_setting( 'footer_copyright_color', '#9ca3af' );
 }
 
 function hj_get_background_color() {
@@ -233,6 +241,8 @@ function hj_output_theme_css() {
 	$primary = hj_get_primary_color();
 	$secondary = hj_get_secondary_color();
 	$accent = hj_get_accent_color();
+	$link_hover = hj_get_link_hover_color();
+	$footer_copyright = hj_get_footer_copyright_color();
 	$body_color = hj_get_body_text_color();
 	$heading_color = hj_get_heading_color();
 	$bg_color = hj_get_background_color();
@@ -252,6 +262,8 @@ function hj_output_theme_css() {
 			--hj-primary: <?php echo esc_attr( $primary ); ?>;
 			--hj-secondary: <?php echo esc_attr( $secondary ); ?>;
 			--hj-accent: <?php echo esc_attr( $accent ); ?>;
+			--hj-link-hover: <?php echo esc_attr( $link_hover ); ?>;
+			--hj-footer-copyright: <?php echo esc_attr( $footer_copyright ); ?>;
 			--hj-body-color: <?php echo esc_attr( $body_color ); ?>;
 			--hj-heading-color: <?php echo esc_attr( $heading_color ); ?>;
 			--hj-bg-color: <?php echo esc_attr( $bg_color ); ?>;
@@ -276,7 +288,13 @@ function hj_output_theme_css() {
 		h1, h2, h3, h4, h5, h6 {
 			--color-dark: var(--hj-heading-color);
 		}
+
+		a:hover,
+		a:focus {
+			color: var(--hj-link-hover);
+		}
 	</style>
 	<?php
 }
-add_action( 'wp_head', 'hj_output_theme_css', 5 );
+// Print after enqueued styles so CSS variables and hover color win cascade
+add_action( 'wp_head', 'hj_output_theme_css', 99 );

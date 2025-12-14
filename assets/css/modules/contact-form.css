@@ -82,12 +82,7 @@
 }
 
 .module-contact-form {
-  padding: 60px 0;
-}
-@media (min-width: 992px) {
-  .module-contact-form {
-    padding: 80px 0;
-  }
+  padding: 0;
 }
 .module-contact-form .contact-form-wrapper {
   max-width: 700px;
@@ -95,6 +90,89 @@
 }
 .module-contact-form .form-container {
   margin-top: 3rem;
+}
+.module-contact-form .form-container .fluentform,
+.module-contact-form .form-container .fluentform .ff-el-group,
+.module-contact-form .form-container .fluentform .ff-el-input--content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.module-contact-form .form-container .fluentform .ff-el-group {
+  padding: 0 !important;
+}
+.module-contact-form .form-container .fluentform .ff-message-success,
+.module-contact-form .form-container .fluentform .ff-message-warning,
+.module-contact-form .form-container .fluentform .ff-message-error {
+  background: transparent !important;
+  border: none !important;
+}
+.module-contact-form .form-container .fluentform label,
+.module-contact-form .form-container .fluentform .ff-el-input--label {
+  color: rgba(229, 231, 235, 0.9) !important;
+}
+.module-contact-form .form-container .fluentform .ff-el-form-control {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e5e7eb !important;
+  border-radius: 6px;
+  transition: all 0.15s ease-in-out;
+}
+.module-contact-form .form-container .fluentform .ff-el-form-control:focus {
+  outline: none;
+  border-color: #007bff !important;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.18) !important;
+}
+.module-contact-form .form-container .fluentform .ff-btn,
+.module-contact-form .form-container .fluentform .ff-btn-submit,
+.module-contact-form .form-container .fluentform .ff-btn-primary,
+.module-contact-form .form-container .fluentform input[type=submit],
+.module-contact-form .form-container .fluentform button[type=submit] {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.module-contact-form .form-container .fluentform .ff-btn:hover,
+.module-contact-form .form-container .fluentform .ff-btn-submit:hover,
+.module-contact-form .form-container .fluentform .ff-btn-primary:hover,
+.module-contact-form .form-container .fluentform input[type=submit]:hover,
+.module-contact-form .form-container .fluentform button[type=submit]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.module-contact-form .form-container .fluentform .ff-btn:active,
+.module-contact-form .form-container .fluentform .ff-btn-submit:active,
+.module-contact-form .form-container .fluentform .ff-btn-primary:active,
+.module-contact-form .form-container .fluentform input[type=submit]:active,
+.module-contact-form .form-container .fluentform button[type=submit]:active {
+  transform: translateY(0);
+}
+.module-contact-form .form-container .fluentform .ff-btn,
+.module-contact-form .form-container .fluentform .ff-btn-submit,
+.module-contact-form .form-container .fluentform .ff-btn-primary,
+.module-contact-form .form-container .fluentform input[type=submit],
+.module-contact-form .form-container .fluentform button[type=submit] {
+  background: var(--hj-btn-primary-bg, #007bff) !important;
+  color: var(--hj-btn-primary-text, #ffffff) !important;
+  border-color: var(--hj-btn-border-color, #007bff) !important;
+  border-radius: var(--hj-btn-radius, 6px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+.module-contact-form .form-container .fluentform .ff-btn:hover,
+.module-contact-form .form-container .fluentform .ff-btn-submit:hover,
+.module-contact-form .form-container .fluentform .ff-btn-primary:hover,
+.module-contact-form .form-container .fluentform input[type=submit]:hover,
+.module-contact-form .form-container .fluentform button[type=submit]:hover {
+  filter: brightness(1.06);
 }
 .module-contact-form .form-container form {
   display: flex;
@@ -160,4 +238,14 @@
 .module-contact-form .form-container form input[type=submit] {
   align-self: center;
   margin-top: 1.5rem;
+}
+
+:where(.fluentform) .ff-btn-submit,
+:where(.fluentform) .ff-btn-primary,
+:where(.fluentform) button[type=submit],
+:where(.fluentform) input[type=submit] {
+  background: var(--hj-btn-primary-bg, #007bff) !important;
+  color: var(--hj-btn-primary-text, #ffffff) !important;
+  border-color: var(--hj-btn-border-color, #007bff) !important;
+  border-radius: var(--hj-btn-radius, 6px) !important;
 }

@@ -101,7 +101,7 @@
           transition: color 0.2s ease, transform 0.2s ease;
 
           &:hover {
-            color: #ffffff;
+            color: var(--hj-link-hover, #ffffff);
             transform: translateX(2px);
           }
         }
@@ -128,7 +128,8 @@
 
       .contact-icon { color: #d1d5db; font-weight: 700; font-size: 1.05rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
       .contact-icon .icon { width: 1rem; height: 1rem; display: block; }
-      a { color: #d1d5db; font-weight: 600; text-decoration: none; }
+      a { color: #d1d5db; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+      a:hover { color: var(--hj-link-hover, #ffffff); }
     }
   }
 
@@ -154,7 +155,7 @@
     }
 
     .footer-copyright {
-      color: #9ca3af;
+      color: var(--hj-footer-copyright, #9ca3af);
       font-size: 0.95rem;
     }
 

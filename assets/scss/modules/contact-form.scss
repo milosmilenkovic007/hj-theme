@@ -6,11 +6,7 @@
 @use '../layout/buttons' as buttons;
 
 .module-contact-form {
-	padding: 60px 0;
-
-	@include media-lg {
-		padding: 80px 0;
-	}
+	padding: 0;
 
 	.contact-form-wrapper {
 		max-width: 700px;
@@ -19,6 +15,57 @@
 
 	.form-container {
 		margin-top: $spacing-xxl;
+
+		// Fluent Forms overrides
+		.fluentform,
+		.fluentform .ff-el-group,
+		.fluentform .ff-el-input--content {
+			background: transparent !important;
+			box-shadow: none !important;
+			border: none !important;
+		}
+
+		.fluentform .ff-el-group { padding: 0 !important; }
+		.fluentform .ff-message-success,
+		.fluentform .ff-message-warning,
+		.fluentform .ff-message-error { background: transparent !important; border: none !important; }
+
+		.fluentform label,
+		.fluentform .ff-el-input--label {
+			color: rgba(229, 231, 235, 0.9) !important;
+		}
+
+		.fluentform .ff-el-form-control {
+			background: rgba(255, 255, 255, 0.04);
+			border: 1px solid rgba(255, 255, 255, 0.12);
+			color: #e5e7eb !important;
+			border-radius: $border-radius-md;
+			transition: $transition-fast;
+
+			&:focus {
+				outline: none;
+				border-color: $color-primary !important;
+				box-shadow: 0 0 0 3px rgba($color-primary, 0.18) !important;
+			}
+		}
+
+		// Submit button should use theme primary colors
+		.fluentform .ff-btn,
+		.fluentform .ff-btn-submit,
+		.fluentform .ff-btn-primary,
+		.fluentform input[type='submit'],
+		.fluentform button[type='submit'] {
+			@include buttons.btn-base;
+			background: var(--hj-btn-primary-bg, $color-primary) !important;
+			color: var(--hj-btn-primary-text, #ffffff) !important;
+			border-color: var(--hj-btn-border-color, $color-primary) !important;
+			border-radius: var(--hj-btn-radius, $border-radius-md) !important;
+			box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+
+			&:hover {
+				filter: brightness(1.06);
+			}
+		}
 
 		form {
 			display: flex;
@@ -56,4 +103,15 @@
 			}
 		}
 	}
+}
+
+// Minimal global fallback if a Fluent Form renders outside the module
+:where(.fluentform) .ff-btn-submit,
+:where(.fluentform) .ff-btn-primary,
+:where(.fluentform) button[type='submit'],
+:where(.fluentform) input[type='submit'] {
+	background: var(--hj-btn-primary-bg, #007bff) !important;
+	color: var(--hj-btn-primary-text, #ffffff) !important;
+	border-color: var(--hj-btn-border-color, #007bff) !important;
+	border-radius: var(--hj-btn-radius, 6px) !important;
 }

@@ -228,7 +228,7 @@ new HeroModule();
 
 ### 4. Contact Form
 **Korišćenje:** Kontakt forme
-- Podrška za Gravity Forms i WPForms
+- Podrška za Fluent Forms
 - Naslov i opis
 - Boja pozadine
 

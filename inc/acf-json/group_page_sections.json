@@ -528,7 +528,7 @@
             },
             {
               "key": "field_contact_form_id",
-              "label": "Form ID (Gravity Forms or WPForms)",
+              "label": "Form ID (Fluent Forms)",
               "name": "form_id",
               "aria-label": "",
               "type": "number",

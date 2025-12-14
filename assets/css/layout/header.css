@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  justify-content: space-between;
 }
 .pro-header .header-brand {
   display: flex;
@@ -48,6 +47,9 @@
 }
 .pro-header .header-menu a:hover {
   color: #111827;
+}
+.pro-header .header-cta {
+  margin-left: auto;
 }
 .pro-header .header-cta .btn {
   display: inline-flex;

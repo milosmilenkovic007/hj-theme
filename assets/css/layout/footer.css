@@ -105,7 +105,7 @@
   transition: color 0.2s ease, transform 0.2s ease;
 }
 .pro-footer .footer-column .footer-menu-column li a:hover {
-  color: #ffffff;
+  color: var(--hj-link-hover, #ffffff);
   transform: translateX(2px);
 }
 .pro-footer .footer-contact-address {
@@ -142,6 +142,10 @@
   color: #d1d5db;
   font-weight: 600;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+.pro-footer .footer-contact-list .contact-item a:hover {
+  color: var(--hj-link-hover, #ffffff);
 }
 .pro-footer .footer-bottom {
   background: var(--footer-bottom-bg, #0a0f1c);
@@ -166,7 +170,7 @@
   }
 }
 .pro-footer .footer-bottom .footer-copyright {
-  color: #9ca3af;
+  color: var(--hj-footer-copyright, #9ca3af);
   font-size: 0.95rem;
 }
 .pro-footer .footer-bottom .footer-social {

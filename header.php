@@ -18,18 +18,19 @@
 				<div class="header-brand">
 					<?php
 					$settings_logo_id = function_exists( 'get_field' ) ? get_field( 'header_logo', 'option' ) : null;
+					$home_url = esc_url( home_url( '/' ) );
 					if ( $settings_logo_id ) {
 						$logo_html = wp_get_attachment_image( $settings_logo_id, 'full', false, array( 'class' => 'brand-logo-img' ) );
 						if ( $logo_html ) {
-							echo $logo_html;
+							echo '<a class="brand-logo-link" href="' . $home_url . '" aria-label="' . esc_attr( get_bloginfo( 'name' ) ) . '">' . $logo_html . '</a>';
 						}
 					} elseif ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 						?>
-						<div class="brand-logo"><?php the_custom_logo(); ?></div>
+						<a class="brand-logo" href="<?php echo $home_url; ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"><?php the_custom_logo(); ?></a>
 						<?php
 					} else {
 						?>
-						<a class="brand-text" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+						<a class="brand-text" href="<?php echo $home_url; ?>"><?php bloginfo( 'name' ); ?></a>
 						<?php
 					}
 					?>

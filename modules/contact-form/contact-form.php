@@ -5,12 +5,13 @@
 
 $heading = get_sub_field( 'heading' );
 $description = get_sub_field( 'description' );
-$form_id = get_sub_field( 'form_id' );
-$background_color = get_sub_field( 'background_color' ) ?: '#ffffff';
+$form_input = trim( (string) get_sub_field( 'form_id' ) );
+$background_color = get_sub_field( 'background_color' );
+$background_style = 'background-color: transparent;';
 
 ?>
 
-<section class="module module-contact-form" style="background-color: <?php echo esc_attr( $background_color ); ?>;">
+<section class="module module-contact-form" style="<?php echo esc_attr( $background_style ); ?>">
 	<div class="container">
 		<div class="contact-form-wrapper">
 			<?php if ( $heading ) : ?>
@@ -21,16 +22,20 @@ $background_color = get_sub_field( 'background_color' ) ?: '#ffffff';
 				<p class="section-description"><?php echo wp_kses_post( $description ); ?></p>
 			<?php endif; ?>
 
-			<?php if ( $form_id ) : ?>
+			<?php if ( $form_input ) : ?>
 				<div class="form-container">
 					<?php
-					// Support za Gravity Forms i WPForms
-					if ( class_exists( 'GFForms' ) ) {
-						gravity_form( intval( $form_id ), false, false, false, null, true, 0, false );
-					} elseif ( function_exists( 'wpforms_display' ) ) {
-						wpforms_display( intval( $form_id ) );
+					// Accept either a plain ID (e.g., 3) or a full shortcode like [fluentform id="3"]
+					$shortcode = preg_match( '/\[[^\]]+\]/', $form_input )
+						? $form_input
+						: '[fluentform id="' . esc_attr( $form_input ) . '"]';
+
+					$output = do_shortcode( $shortcode );
+					if ( ! empty( $output ) ) {
+						echo $output;
 					} else {
-						echo '<p>' . esc_html__( 'Contact form plugin not found.', 'custom-theme' ) . '</p>';
+						// Fallback message to help debugging when plugin or form is missing
+						echo '<p>' . esc_html__( 'Fluent Forms plugin is not active or the form ID is invalid.', 'custom-theme' ) . '</p>';
 					}
 					?>
 				</div><!-- .form-container -->
