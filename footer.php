@@ -25,19 +25,21 @@
 			class="site-footer pro-footer"
 			style="--footer-bg: <?php echo esc_attr( $footer_bg ); ?>; --footer-bottom-bg: <?php echo esc_attr( $footer_bottom_bg ); ?>;"
 		>
-			<div class="footer-top container">
+			<div class="container footer-top">
 				<div class="footer-brand">
-					<?php if ( $footer_logo_id ) : ?>
-						<?php echo wp_get_attachment_image( $footer_logo_id, 'full', false, array( 'class' => 'footer-logo-img' ) ); ?>
-					<?php else : ?>
-						<a class="footer-brand-text" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-					<?php endif; ?>
+					<div class="footer-brand-logos">
+						<?php if ( $footer_logo_id ) : ?>
+							<?php echo wp_get_attachment_image( $footer_logo_id, 'full', false, array( 'class' => 'footer-logo-img' ) ); ?>
+						<?php else : ?>
+							<a class="footer-brand-text" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+						<?php endif; ?>
 
-					<?php if ( $footer_cert_id ) : ?>
-						<div class="footer-certificate">
-							<?php echo wp_get_attachment_image( $footer_cert_id, 'medium', false, array( 'class' => 'footer-certificate-img', 'loading' => 'lazy' ) ); ?>
-						</div>
-					<?php endif; ?>
+						<?php if ( $footer_cert_id ) : ?>
+							<div class="footer-certificate">
+								<?php echo wp_get_attachment_image( $footer_cert_id, 'medium', false, array( 'class' => 'footer-certificate-img', 'loading' => 'lazy' ) ); ?>
+							</div>
+						<?php endif; ?>
+					</div>
 
 					<?php if ( ! empty( $footer_text ) ) : ?>
 						<p class="footer-description"><?php echo wp_kses_post( $footer_text ); ?></p>
@@ -111,7 +113,7 @@
 			</div><!-- .footer-top -->
 
 			<div class="footer-bottom">
-				<div class="container footer-bottom-inner">
+				<div class="footer-bottom-inner">
 					<div class="footer-copyright"><?php echo wp_kses_post( $footer_copyright ); ?></div>
 					<?php if ( ! empty( $social_links ) ) : ?>
 						<div class="footer-social" aria-label="Social media">
@@ -159,5 +161,65 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+	<script>
+		// Header Menu Toggle Functionality
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuToggle = document.getElementById('header-menu-toggle');
+			const mobileMenu = document.getElementById('header-mobile-menu');
+
+			if (!menuToggle || !mobileMenu) {
+				return;
+			}
+
+			// Toggle menu on button click
+			menuToggle.addEventListener('click', function(e) {
+				e.preventDefault();
+				const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+				
+				menuToggle.setAttribute('aria-expanded', !isExpanded);
+				menuToggle.classList.toggle('active');
+				mobileMenu.classList.toggle('active');
+
+				// Prevent body scroll when menu is open
+				if (!isExpanded) {
+					document.body.style.overflow = 'hidden';
+				} else {
+					document.body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking on a link
+			const menuLinks = mobileMenu.querySelectorAll('a');
+			menuLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					menuToggle.setAttribute('aria-expanded', 'false');
+					menuToggle.classList.remove('active');
+					mobileMenu.classList.remove('active');
+					document.body.style.overflow = '';
+				});
+			});
+
+			// Close menu when pressing Escape
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+					menuToggle.setAttribute('aria-expanded', 'false');
+					menuToggle.classList.remove('active');
+					mobileMenu.classList.remove('active');
+					document.body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking outside
+			document.addEventListener('click', function(e) {
+				const header = document.querySelector('.site-header');
+				if (!header.contains(e.target) && menuToggle.getAttribute('aria-expanded') === 'true') {
+					menuToggle.setAttribute('aria-expanded', 'false');
+					menuToggle.classList.remove('active');
+					mobileMenu.classList.remove('active');
+					document.body.style.overflow = '';
+				}
+			});
+		});
+	</script>
 </body>
 </html>

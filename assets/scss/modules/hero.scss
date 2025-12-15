@@ -20,9 +20,31 @@
 		grid-template-columns: 1fr;
 		gap: 40px;
 		align-items: center;
+		justify-items: center;
+
+		// Mobile-first: show media before text and center text
+		.hero-text {
+			order: 2;
+			text-align: center;
+		}
+
+		.hero-image,
+		.hero-video {
+			order: 1;
+		}
 
 		@include media-lg {
 			grid-template-columns: 1fr 1fr;
+			justify-items: stretch;
+			// Desktop/tablet: restore natural order (text left, media right)
+			.hero-text {
+				order: 0;
+				text-align: left;
+			}
+			.hero-image,
+			.hero-video {
+				order: 0;
+			}
 		}
 	}
 

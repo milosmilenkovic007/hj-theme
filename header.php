@@ -73,10 +73,37 @@
 					<a class="btn btn-primary" href="<?php echo esc_url( $cta_url ); ?>"><?php echo esc_html( $cta_label ); ?></a>
 				</div>
 
-				<button class="header-toggle" aria-label="Toggle navigation" aria-expanded="false">
+				<button class="header-toggle" aria-label="Toggle navigation" aria-expanded="false" id="header-menu-toggle">
 					<span></span><span></span><span></span>
 				</button>
 			</div><!-- .header-inner -->
+
+			<!-- Mobile Menu -->
+			<nav class="header-mobile-menu" id="header-mobile-menu" aria-label="Mobile Menu">
+				<div class="mobile-menu-inner">
+					<?php
+					if ( $nav_block_id ) {
+						$nav_block = sprintf( '<!-- wp:navigation {"ref":%d} /-->', $nav_block_id );
+						echo wp_kses_post( do_blocks( $nav_block ) );
+					} else {
+						$args = array(
+							'menu_class'  => 'header-menu-mobile',
+							'container'   => false,
+							'fallback_cb' => 'wp_page_menu',
+						);
+						if ( $menu_id ) {
+							$args['menu'] = $menu_id;
+						} else {
+							$args['theme_location'] = 'primary';
+						}
+						wp_nav_menu( $args );
+					}
+					?>
+					<div class="mobile-menu-cta">
+						<a class="btn btn-primary btn-block" href="<?php echo esc_url( $cta_url ); ?>"><?php echo esc_html( $cta_label ); ?></a>
+					</div>
+				</div>
+			</nav>
 		</header><!-- #masthead -->
 
 		<div id="content" class="site-content">

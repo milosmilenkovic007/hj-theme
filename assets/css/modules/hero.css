@@ -27,10 +27,28 @@
   grid-template-columns: 1fr;
   gap: 40px;
   align-items: center;
+  justify-items: center;
+}
+.module-hero .hero-content .hero-text {
+  order: 2;
+  text-align: center;
+}
+.module-hero .hero-content .hero-image,
+.module-hero .hero-content .hero-video {
+  order: 1;
 }
 @media (min-width: 992px) {
   .module-hero .hero-content {
     grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+  }
+  .module-hero .hero-content .hero-text {
+    order: 0;
+    text-align: left;
+  }
+  .module-hero .hero-content .hero-image,
+  .module-hero .hero-content .hero-video {
+    order: 0;
   }
 }
 .module-hero .hero-title {
