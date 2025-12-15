@@ -21,12 +21,29 @@ $features = get_sub_field( 'features' );
 		<?php endif; ?>
 
 		<?php if ( $features && is_array( $features ) ) : ?>
-			<div class="features-grid features-grid-<?php echo esc_attr( $columns ); ?>">
+			<div class="features-grid features-grid-4">
 				<?php foreach ( $features as $feature ) : ?>
-					<div class="feature-item">
-						<?php if ( ! empty( $feature['icon'] ) ) : ?>
+					<?php
+					$icon_color = ! empty( $feature['icon_color'] ) ? $feature['icon_color'] : '#3B82F6';
+					$bg_color = ! empty( $feature['bg_color'] ) ? $feature['bg_color'] : '#ffffff';
+					$bg_gradient_enabled = ! empty( $feature['bg_gradient_enabled'] );
+					$bg_gradient_end = ! empty( $feature['bg_gradient_end'] ) ? $feature['bg_gradient_end'] : '#f9fafb';
+					$bg_gradient_angle = ! empty( $feature['bg_gradient_angle'] ) ? (int) $feature['bg_gradient_angle'] : 135;
+					
+					$style = 'style="--icon-color: ' . esc_attr( $icon_color ) . '; ';
+					
+					if ( $bg_gradient_enabled ) {
+						$style .= '--bg-color: linear-gradient(' . esc_attr( $bg_gradient_angle ) . 'deg, ' . esc_attr( $bg_color ) . ' 0%, ' . esc_attr( $bg_gradient_end ) . ' 100%);';
+					} else {
+						$style .= '--bg-color: ' . esc_attr( $bg_color ) . ';';
+					}
+					
+					$style .= '"';
+					?>
+					<div class="feature-item" <?php echo $style; ?>>
+						<?php if ( ! empty( $feature['icon_upload'] ) ) : ?>
 							<div class="feature-icon">
-								<?php echo wp_kses_post( $feature['icon'] ); ?>
+								<?php echo wp_get_attachment_image( $feature['icon_upload'], 'thumbnail', false, array( 'class' => 'feature-svg' ) ); ?>
 							</div><!-- .feature-icon -->
 						<?php endif; ?>
 

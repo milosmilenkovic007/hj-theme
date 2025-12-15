@@ -431,11 +431,11 @@
               "sub_fields": [
                 {
                   "key": "field_feature_icon",
-                  "label": "Icon (HTML or SVG)",
-                  "name": "icon",
+                  "label": "Icon (SVG or PNG)",
+                  "name": "icon_upload",
                   "aria-label": "",
-                  "type": "textarea",
-                  "instructions": "",
+                  "type": "image",
+                  "instructions": "Upload SVG or PNG icon file",
                   "required": 0,
                   "conditional_logic": 0,
                   "wrapper": {
@@ -443,8 +443,124 @@
                     "class": "",
                     "id": ""
                   },
-                  "default_value": "",
-                  "maxlength": ""
+                  "return_format": "id",
+                  "preview_size": "thumbnail",
+                  "library": "all",
+                  "min_width": "",
+                  "min_height": "",
+                  "min_size": "",
+                  "max_width": "",
+                  "max_height": "",
+                  "max_size": "",
+                  "mime_types": "svg,png"
+                },
+                {
+                  "key": "field_feature_icon_color",
+                  "label": "Icon Color",
+                  "name": "icon_color",
+                  "aria-label": "",
+                  "type": "color_picker",
+                  "instructions": "Select color for the icon",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "#3B82F6",
+                  "enable_opacity": 0,
+                  "return_format": "string"
+                },
+                {
+                  "key": "field_feature_bg_color",
+                  "label": "Background Color",
+                  "name": "bg_color",
+                  "aria-label": "",
+                  "type": "color_picker",
+                  "instructions": "Select background color for the card",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "#ffffff",
+                  "enable_opacity": 0,
+                  "return_format": "string"
+                },
+                {
+                  "key": "field_feature_bg_gradient_enabled",
+                  "label": "Use Gradient Background",
+                  "name": "bg_gradient_enabled",
+                  "aria-label": "",
+                  "type": "true_false",
+                  "instructions": "Enable gradient background instead of solid color",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "message": "",
+                  "ui": 1,
+                  "ui_on_text": "Yes",
+                  "ui_off_text": "No"
+                },
+                {
+                  "key": "field_feature_bg_gradient_end",
+                  "label": "Gradient End Color",
+                  "name": "bg_gradient_end",
+                  "aria-label": "",
+                  "type": "color_picker",
+                  "instructions": "Select the end color for the gradient",
+                  "required": 0,
+                  "conditional_logic": [
+                    [
+                      {
+                        "field": "field_feature_bg_gradient_enabled",
+                        "operator": "==",
+                        "value": "1"
+                      }
+                    ]
+                  ],
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "#f9fafb",
+                  "enable_opacity": 0,
+                  "return_format": "string"
+                },
+                {
+                  "key": "field_feature_bg_gradient_angle",
+                  "label": "Gradient Angle",
+                  "name": "bg_gradient_angle",
+                  "aria-label": "",
+                  "type": "number",
+                  "instructions": "Gradient angle in degrees (0-360)",
+                  "required": 0,
+                  "conditional_logic": [
+                    [
+                      {
+                        "field": "field_feature_bg_gradient_enabled",
+                        "operator": "==",
+                        "value": "1"
+                      }
+                    ]
+                  ],
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": 135,
+                  "min": 0,
+                  "max": 360,
+                  "step": 1
                 },
                 {
                   "key": "field_feature_title",
