@@ -21,9 +21,18 @@
     gap: 10px;
 
     .brand-logo-img {
-      max-height: 46px;
+      max-height: 80px;
       width: auto;
     }
+
+	// Some sticky scripts/plugins set inline height on the logo image.
+	// Apply sizing to any logo image markup (ACF logo, WP custom logo, clones).
+	img {
+      height: 80px;
+      max-height: 80px;
+		width: auto;
+		object-fit: contain;
+	}
 
     .brand-logo,
     .brand-text {
@@ -224,12 +233,36 @@
 
     .header-brand {
       .brand-logo-img {
-        max-height: 40px;
+			max-height: 56px;
       }
+
+    img {
+      height: 56px;
+      max-height: 56px;
+      width: auto;
+    }
 
       .brand-text {
         font-size: 16px;
       }
+    }
+  }
+
+  // Shrink logo when header becomes sticky/scrolled.
+  &.sticky-header,
+  &.is-sticky,
+  &.scrolled {
+    .header-brand {
+      .brand-logo-img {
+        height: 48px !important;
+        max-height: 48px !important;
+      }
+
+		img {
+        height: 48px !important;
+        max-height: 48px !important;
+			width: auto !important;
+		}
     }
   }
 }

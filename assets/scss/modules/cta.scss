@@ -8,6 +8,11 @@
 	padding: 60px 0;
 	text-align: center;
 
+	&.module-cta--outline {
+		border: 1px solid #fd707a;
+		border-radius: 24px;
+	}
+
 	@include media-lg {
 		padding: 80px 0;
 	}

@@ -26,6 +26,8 @@ if ( have_posts() ) :
 				<div class="container">
 					<article <?php post_class( 'page-content' ); ?>>
 						<?php
+						the_content();
+
 						if ( function_exists( 'have_rows' ) && have_rows( 'page_sections' ) ) {
 							while ( have_rows( 'page_sections' ) ) {
 								the_row();
@@ -36,8 +38,6 @@ if ( have_posts() ) :
 									include $module_path;
 								}
 							}
-						} else {
-							the_content();
 						}
 						?>
 					</article>

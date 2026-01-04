@@ -11,9 +11,11 @@ $button_style = get_sub_field( 'button_style' ) ?: 'primary';
 $background_color = get_sub_field( 'background_color' ) ?: '#f5f5f5';
 $text_color = get_sub_field( 'text_color' ) ?: '#000000';
 
+$cta_modifier_class = $button_style === 'outline' ? ' module-cta--outline' : '';
+
 ?>
 
-<section class="module module-cta" style="background-color: <?php echo esc_attr( $background_color ); ?>;color: <?php echo esc_attr( $text_color ); ?>;">
+<section class="module module-cta<?php echo esc_attr( $cta_modifier_class ); ?>" style="background-color: <?php echo esc_attr( $background_color ); ?>;color: <?php echo esc_attr( $text_color ); ?>;">
 	<div class="container">
 		<div class="cta-wrapper">
 			<?php if ( $heading ) : ?>

@@ -63,12 +63,13 @@
 
 .btn-outline {
   background-color: transparent;
-  color: var(--hj-btn-border-color, #007bff);
-  border: 2px solid var(--hj-btn-border-color, #007bff);
+  color: #fd707a !important;
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 2px #fd707a;
 }
 .btn-outline:hover {
-  background-color: var(--hj-btn-border-color, #007bff);
-  color: #ffffff;
+  color: #0f1626 !important;
+  background: #fd707a;
 }
 
 .btn-lg {

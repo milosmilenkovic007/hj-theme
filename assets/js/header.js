@@ -2,6 +2,15 @@
  * Header Menu Toggle Functionality
  */
 document.addEventListener('DOMContentLoaded', function() {
+	const headerEl = document.getElementById('masthead') || document.querySelector('.site-header');
+	const setScrolledState = () => {
+		if (!headerEl) return;
+		headerEl.classList.toggle('scrolled', window.scrollY > 0);
+	};
+
+	setScrolledState();
+	window.addEventListener('scroll', setScrolledState, { passive: true });
+
 	const menuToggle = document.getElementById('header-menu-toggle');
 	const mobileMenu = document.getElementById('header-mobile-menu');
 
