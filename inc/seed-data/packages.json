@@ -1,0 +1,106 @@
+[
+  {
+    "title": "VIP Check Up For Women",
+    "price": 795,
+    "currency": "£",
+    "short_description": "Medical checkup, done in a single day. Includes examination internal medicine, ophthalmology, gynaecology, cardiology, chest physician, radiology (Chest X-ray, Thyroid & Whole Abdominal Ultrasound, Breast Digital Mammography & Ultrasound), dietitian, laboratory tests, pathology, cardiology, cancer markers.",
+    "include_sections": [
+      {
+        "title_line_1": "Medical",
+        "title_line_2": "Examinations",
+        "items": [
+          "Internal Medicine",
+          "Cardiology",
+          "Urology (♂) / Gynecology (♀)",
+          "Ophtalmology",
+          "Nutrition & Dietetics",
+          "Neurology"
+        ]
+      },
+      {
+        "title_line_1": "Endoscopic",
+        "title_line_2": "Procedures",
+        "items": []
+      },
+      {
+        "title_line_1": "Cardiology",
+        "title_line_2": "Laboratory",
+        "items": [
+          "Electrocardiography",
+          "Echocardiography",
+          "Treadmil Stress Test"
+        ]
+      },
+      {
+        "title_line_1": "Radiology &",
+        "title_line_2": "Functional Tests",
+        "items": [
+          "Chest X-Ray",
+          "Mammography and/or Breast Ultrasound (♀)",
+          "Thyroid Ultrasound",
+          "Whole Abdominal Ultrasound",
+          "Pulmonary Function Test",
+          "Eye Pressure Check (Tonometry)",
+          "Vision Check / Refraction Test",
+          "Cranial (Brain) MRI",
+          "Carotid Doppler Ultrasound"
+        ]
+      },
+      {
+        "title_line_1": "Biochemistry",
+        "title_line_2": "Laboratory",
+        "items": [
+          "Complete Blood Count",
+          "Fasting Glucose",
+          "HbA1c",
+          "Fasting Insulin",
+          "HOMA-IR",
+          "AST",
+          "ALT",
+          "ALP",
+          "GGT",
+          "Total Cholosterole",
+          "HDL",
+          "LDL",
+          "Triglyceride",
+          "TSH",
+          "FT3",
+          "FT4",
+          "BUN/UREA",
+          "Creatinine",
+          "eGFR",
+          "Uric Acid",
+          "Calcium",
+          "Magnesium",
+          "Iron",
+          "TIBC",
+          "Ferritin",
+          "Vitamin D3",
+          "Vitamin B12",
+          "Folic acid/Folate",
+          "Erythrocyte sedimentation rate (ESR)",
+          "C-reactive protein (CRP)",
+          "HbsAg",
+          "Anti-HBs",
+          "Anti-HCV",
+          "Anti-HIV",
+          "Total PSA (♂)",
+          "Free PSA (♂)",
+          "Pap Smear test (♀)",
+          "CEA",
+          "CA-125",
+          "CA 19-9",
+          "CA 15-3",
+          "Fecal Occult Blood",
+          "Stool Parasite Test",
+          "Complete Urinalysis",
+          "RF",
+          "ASO",
+          "Homocysteine",
+          "Lipoprotein(a)",
+          "Potassium"
+        ]
+      }
+    ]
+  }
+]

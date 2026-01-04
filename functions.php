@@ -38,7 +38,9 @@ add_filter( 'upload_mimes', function( $mimes ) {
 // Include theme support and features
 require_once HJ_THEME_DIR . '/inc/theme-support.php';
 require_once HJ_THEME_DIR . '/inc/enqueue-assets.php';
+require_once HJ_THEME_DIR . '/inc/cpt-packages.php';
 require_once HJ_THEME_DIR . '/inc/acf-register-fields.php';
+require_once HJ_THEME_DIR . '/inc/seed-packages.php';
 require_once HJ_THEME_DIR . '/inc/acf-theme-settings.php';
 require_once HJ_THEME_DIR . '/inc/acf-blocks.php';
 require_once HJ_THEME_DIR . '/inc/theme-settings-helpers.php';
@@ -48,3 +50,28 @@ function hj_theme_load_textdomain() {
 	load_theme_textdomain( 'hj-theme', HJ_THEME_DIR . '/languages' );
 }
 add_action( 'after_setup_theme', 'hj_theme_load_textdomain' );
+
+/**
+ * One-time rewrite flush after CPT changes.
+ *
+ * Without this, WordPress may not match /packages/{slug}/ to the Package CPT yet,
+ * and can end up redirecting to an attachment with the same slug.
+ */
+function hj_theme_maybe_flush_rewrite_rules() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
+	$option_key = 'hj_theme_rewrite_flushed_' . HJ_THEME_VERSION;
+	if ( get_option( $option_key ) ) {
+		return;
+	}
+
+	flush_rewrite_rules( false );
+	update_option( $option_key, 1 );
+}
+add_action( 'admin_init', 'hj_theme_maybe_flush_rewrite_rules' );

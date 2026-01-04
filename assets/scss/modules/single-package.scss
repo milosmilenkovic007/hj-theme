@@ -1,0 +1,708 @@
+/**
+ * Single Package (Packages CPT)
+ * Medicorner-parity layout, scoped to .single-package
+ */
+@use '../variables' as *;
+
+.single-package {
+	background: color-mix(in srgb, var(--hj-bg-color, #ffffff) 92%, black 8%);
+
+	/* ----------------------------
+	 * Hero (hero-section-module)
+	 * ---------------------------- */
+	.hero-section-module {
+		padding: 40px 0 0;
+	}
+
+	.hero-section-module__inner {
+		max-width: $container-max-width;
+		margin: 0 auto;
+		padding: 0 $spacing-md;
+
+		@media (min-width: $breakpoint-sm) {
+			padding: 0 $spacing-lg;
+		}
+
+		@media (min-width: $breakpoint-md) {
+			padding: 0 $spacing-xl;
+		}
+	}
+
+	.hero-section-module__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 26px;
+		align-items: center;
+
+		@media (min-width: $breakpoint-lg) {
+			grid-template-columns: 1fr 1fr;
+			gap: 40px;
+		}
+	}
+
+	.hero-section-module__title {
+		margin: 0 0 12px;
+		color: var(--hj-heading-color, #000);
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 1.1;
+
+		@media (min-width: $breakpoint-md) {
+			font-size: 3rem;
+		}
+	}
+
+	.hero-section-module__subtitle {
+		margin: 0 0 18px;
+		color: var(--hj-body-color, #343a40);
+		opacity: 0.9;
+		font-size: 1.05rem;
+		line-height: 1.6;
+	}
+
+	.package-flag {
+		margin: 0 0 18px;
+		display: inline-block;
+		padding: 6px 10px;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--hj-primary, #007bff) 12%, transparent);
+		color: var(--hj-primary, #007bff);
+		font-weight: 600;
+		font-size: 0.85rem;
+	}
+
+	.hero-section-module__image img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 14px;
+		object-fit: cover;
+	}
+
+	.package-hero-banner {
+		margin-bottom: 60px;
+
+		@media (max-width: $breakpoint-md) {
+			margin-bottom: 40px;
+		}
+	}
+
+	/* ----------------------------
+	 * Package Sections (Accordion)
+	 * ---------------------------- */
+	.package-sections {
+		background: transparent;
+		padding: 0;
+		margin-bottom: 60px;
+
+		@media (max-width: $breakpoint-md) {
+			margin-bottom: 40px;
+		}
+	}
+
+	.package-sections__heading {
+		text-align: center;
+		font-size: 2.25rem;
+		font-weight: 700;
+		color: var(--hj-heading-color, #000);
+		margin: 0 0 40px;
+
+		@media (max-width: $breakpoint-md) {
+			font-size: 1.8rem;
+			margin-bottom: 30px;
+		}
+	}
+
+	.package-sections__accordion {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+		align-items: start;
+
+		// If the count is odd in a 2-column grid, let the last card span full width.
+		.package-sections__accordion-item:last-child:nth-child(odd) {
+			grid-column: 1 / -1;
+		}
+
+		// If that last (full width) card has a long list, split it into columns.
+		.package-sections__accordion-item:last-child:nth-child(odd) .package-sections__list {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 16px 24px;
+
+			@media (max-width: 968px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media (max-width: $breakpoint-md) {
+				grid-template-columns: 1fr;
+				gap: 16px;
+			}
+		}
+
+		@media (max-width: 968px) {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+
+		@media (max-width: 520px) {
+			gap: 16px;
+			padding: 0 !important;
+			background: transparent !important;
+		}
+
+	}
+
+	.package-sections__accordion-item {
+		border: 1px solid color-mix(in srgb, var(--hj-body-color, #343a40) 14%, transparent);
+		border-radius: 12px;
+		overflow: hidden;
+		background: var(--pkg-bg-color, color-mix(in srgb, var(--hj-bg-color, #ffffff) 92%, black 8%));
+		transition: all 0.3s ease;
+
+		&:hover {
+			box-shadow: 0 4px 12px color-mix(in srgb, var(--hj-body-color, #343a40) 10%, transparent);
+		}
+
+		&[open] {
+			border-color: color-mix(in srgb, var(--hj-primary, #007bff) 30%, transparent);
+			box-shadow: 0 8px 24px color-mix(in srgb, var(--hj-body-color, #343a40) 10%, transparent);
+		}
+	}
+
+	.package-sections__accordion-summary {
+		cursor: pointer;
+		padding: 20px 24px;
+		padding-right: 50px;
+		position: relative;
+		list-style: none;
+		background: transparent;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		@media (max-width: 520px) {
+			padding: 16px 18px;
+			padding-right: 44px;
+		}
+	}
+
+	.package-sections__accordion-title {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.package-sections__title-line-1 {
+		font-size: 0.95rem;
+		font-weight: 500;
+		color: var(--hj-body-color, #343a40);
+		opacity: 0.85;
+	}
+
+	.package-sections__title-line-2 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--hj-heading-color, #000);
+		line-height: 1.2;
+
+		@media (max-width: 520px) {
+			font-size: 1.05rem;
+		}
+	}
+
+	.package-sections__accordion-icon {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%);
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--pkg-arrow-color, var(--hj-primary, #007bff)) 10%, transparent);
+		color: var(--pkg-arrow-color, var(--hj-primary, #007bff));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.25s ease;
+
+		svg {
+			display: block;
+		}
+	}
+
+	details[open] .package-sections__accordion-icon {
+		transform: translateY(-50%) rotate(180deg);
+	}
+
+	.package-sections__accordion-content {
+		padding: 0 24px 24px;
+		background: var(--pkg-bg-color, color-mix(in srgb, var(--hj-bg-color, #ffffff) 92%, black 8%));
+	}
+
+	.package-sections__list {
+		list-style: none;
+		margin: 0;
+		padding: 16px 0 0;
+	}
+
+	.package-sections__list-item {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 10px;
+		padding: 8px 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--pkg-text-color, var(--hj-body-color, #343a40));
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: '';
+			display: inline-block;
+			min-width: 20px;
+			width: 20px;
+			height: 20px;
+			margin-right: 12px;
+			background-image: url('../images/HealtCheckUpIstanbulCheckmark.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			flex-shrink: 0;
+		}
+	}
+
+	.package-sections__text {
+		flex: 1;
+	}
+
+	/* ----------------------------
+	 * CTA Package
+	 * ---------------------------- */
+	.module-cta-package {
+		padding: 20px 0;
+		background: var(--cta-bg-block, var(--pkg-bg-color, color-mix(in srgb, var(--hj-bg-color, #ffffff) 92%, black 8%)));
+		border-radius: 24px;
+		margin: 0 0 40px;
+
+		.cta-package__inner {
+			width: 100%;
+			max-width: $container-max-width;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		.cta-package__block {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			border-radius: 24px;
+			overflow: hidden;
+			background: var(--cta-bg-block, transparent);
+
+			@media (max-width: $breakpoint-md) {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.cta-package__content {
+			padding: 20px 60px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+
+			@media (max-width: $breakpoint-md) {
+				padding: 30px 16px;
+			}
+		}
+
+		.cta-package__heading {
+			margin: 0 0 10px;
+			color: var(--cta-heading-color, var(--hj-primary, #007bff));
+			font-size: 19px;
+			font-weight: 500;
+			line-height: 1.4;
+
+			@media (max-width: $breakpoint-md) {
+				font-size: 15px;
+			}
+		}
+
+		.cta-package__subheading {
+			margin: 0 0 20px;
+			color: var(--cta-subheading-color, var(--hj-heading-color, #000));
+			font-size: 38px;
+			font-weight: 700;
+			line-height: 1.3;
+
+			@media (max-width: $breakpoint-md) {
+				font-size: 25px;
+			}
+		}
+
+		.cta-package__button {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+
+			.btn__icon {
+				display: inline-flex;
+			}
+
+			@media (max-width: $breakpoint-md) {
+				width: 100%;
+				justify-content: center;
+			}
+		}
+
+		.cta-package__image-wrap {
+			position: relative;
+			border-radius: 24px;
+			overflow: hidden;
+			min-height: 320px;
+
+			@media (max-width: $breakpoint-md) {
+				order: -1;
+				min-height: 260px;
+			}
+		}
+
+		.cta-package__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	/* ----------------------------
+	 * Other packages
+	 * ---------------------------- */
+	.other-packages {
+		padding: 100px 20px;
+		background: color-mix(in srgb, var(--hj-bg-color, #ffffff) 90%, black 10%);
+
+		@media (max-width: 968px) {
+			padding: 80px 20px;
+		}
+
+		@media (max-width: $breakpoint-md) {
+			padding: 60px 20px;
+		}
+	}
+
+	.other-packages__inner {
+		max-width: $container-max-width;
+		margin: 0 auto;
+	}
+
+	.other-packages__header {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 60px;
+
+		@media (max-width: 968px) {
+			margin-bottom: 40px;
+		}
+	}
+
+	.other-packages__title {
+		margin: 0;
+		font-size: 2.5rem;
+		color: var(--hj-heading-color, #000);
+
+		@media (max-width: $breakpoint-md) {
+			font-size: 1.6rem;
+		}
+	}
+
+	.other-packages__subtitle {
+		margin: 16px 0 0;
+		color: var(--hj-body-color, #343a40);
+		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.other-packages__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+
+		@media (max-width: 968px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: $breakpoint-md) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.other-packages__card {
+		background: var(--hj-bg-color, #fff);
+		border-radius: 18px;
+		overflow: hidden;
+		box-shadow: 0 8px 24px color-mix(in srgb, var(--hj-body-color, #343a40) 10%, transparent);
+		transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+		&:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 12px 32px color-mix(in srgb, var(--hj-body-color, #343a40) 14%, transparent);
+		}
+	}
+
+	.other-packages__card-link {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		height: 100%;
+	}
+
+	.other-packages__image {
+		position: relative;
+		aspect-ratio: 4 / 3;
+		overflow: hidden;
+		background: color-mix(in srgb, var(--hj-bg-color, #fff) 92%, black 8%);
+	}
+
+	.other-packages__image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.35s ease;
+	}
+
+	.other-packages__card:hover .other-packages__image img {
+		transform: scale(1.05);
+	}
+
+	.other-packages__content {
+		padding: 24px;
+	}
+
+	.other-packages__card-title {
+		margin: 0 0 12px;
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: var(--hj-heading-color, #000);
+
+		@media (max-width: $breakpoint-md) {
+			font-size: 1.2rem;
+		}
+	}
+
+	.other-packages__description {
+		margin: 0;
+		color: var(--hj-body-color, #343a40);
+		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.other-packages__read-more {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		margin-top: 18px;
+		font-weight: 700;
+		color: var(--hj-primary, #007bff);
+	}
+
+	.other-packages__arrow {
+		display: inline-block;
+	}
+
+	/* ----------------------------
+	 * Testimonials wrapper (styling is largely provided by the shortcode)
+	 * ---------------------------- */
+	.module-testimonials {
+		padding: 60px 0;
+		background: transparent;
+
+		.testimonials__inner {
+			max-width: $container-max-width;
+			margin: 0 auto;
+			padding: 0 $spacing-md;
+
+			@media (min-width: $breakpoint-sm) {
+				padding: 0 $spacing-lg;
+			}
+
+			@media (min-width: $breakpoint-md) {
+				padding: 0 $spacing-xl;
+			}
+		}
+
+		.testimonials__title {
+			margin: 0 0 24px;
+			text-align: center;
+			font-size: 2rem;
+			font-weight: 700;
+			color: var(--hj-heading-color, #000);
+		}
+	}
+
+	/* ----------------------------
+	 * Final CTA Section
+	 * ---------------------------- */
+	.module-cta-section {
+		position: relative;
+		width: calc(100vw - 60px);
+		left: 50%;
+		transform: translateX(-50%);
+		margin: 30px 0;
+		padding: 40px 0;
+
+		@media (max-width: $breakpoint-md) {
+			width: calc(100vw - 40px);
+			margin: 30px 0;
+			padding: 20px 0;
+		}
+
+		.cta-section__panel {
+			background: var(--hj-body-color, #343a40);
+			border-radius: 24px;
+			padding: 40px;
+
+			@media (max-width: $breakpoint-md) {
+				padding: 26px;
+			}
+		}
+
+		.cta-section__grid {
+			display: grid;
+			grid-template-columns: 69.2% 30.8%;
+			gap: 0;
+			align-items: start;
+
+			@media (max-width: $breakpoint-md) {
+				grid-template-columns: 1fr;
+				gap: 24px;
+			}
+		}
+
+		.cta-section__heading {
+			margin: 0;
+			color: #ffffff;
+			font-size: 38px;
+			font-weight: 600;
+			line-height: 1.15;
+			letter-spacing: -0.02em;
+
+			@media (max-width: $breakpoint-md) {
+				font-size: 30px;
+			}
+		}
+
+		.cta-section__separator {
+			height: 1px;
+			width: 100%;
+			margin: 28px 0 40px;
+			background: rgba(255, 255, 255, 0.18);
+
+			@media (max-width: $breakpoint-md) {
+				margin: 18px 0 24px;
+			}
+		}
+
+		.cta-section__items {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 34px 64px;
+
+			@media (max-width: $breakpoint-md) {
+				grid-template-columns: 1fr;
+				gap: 22px;
+			}
+		}
+
+		.cta-section__item {
+			display: grid;
+			grid-template-columns: 65px 1fr;
+			gap: 18px;
+			align-items: start;
+		}
+
+		.cta-section__item-icon {
+			width: 65px;
+			height: 65px;
+
+			img {
+				width: 100%;
+				height: 65px;
+				object-fit: cover;
+				object-position: center center;
+				border-radius: 100px;
+				display: block;
+			}
+		}
+
+		.cta-section__item-heading {
+			margin: 0;
+			font-size: 19px;
+			font-weight: 600;
+			line-height: 1.8em;
+			color: #ffffff;
+		}
+
+		.cta-section__item-content {
+			margin: 0;
+			color: rgba(255, 255, 255, 0.85);
+			line-height: 1.6;
+		}
+
+		.cta-section__card {
+			background: rgba(255, 255, 255, 0.08);
+			border-radius: 18px;
+			padding: 18px;
+			display: flex;
+			flex-direction: column;
+			gap: 0;
+		}
+
+		.cta-section__image-wrap {
+			position: relative;
+			border-radius: 14px;
+			overflow: hidden;
+			background: rgba(255, 255, 255, 0.08);
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				z-index: 1;
+				background-image: linear-gradient(
+					180deg,
+					rgba(235, 242, 242, 0) 80%,
+					var(--e-global-color-c8ede70) 95%
+				);
+			}
+		}
+
+		.cta-section__image {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		.cta-section__button {
+			margin-top: 0;
+			align-self: center;
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+
+			.btn__icon {
+				display: inline-flex;
+			}
+		}
+	}
+
+	.package-final-cta {
+		.cta-section__button {
+			margin-top: 20px;
+		}
+	}
+}

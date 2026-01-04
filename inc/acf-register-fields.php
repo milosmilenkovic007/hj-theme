@@ -18,6 +18,7 @@ function hj_theme_register_acf_fields() {
 	$json_files   = array(
 		'group_page_sections.json',
 		'group_hj_theme_settings.json',
+		'group_packages_cpt_fields.json',
 	);
 
 	foreach ( $json_files as $file ) {
