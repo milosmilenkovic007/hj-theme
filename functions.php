@@ -44,6 +44,7 @@ require_once HJ_THEME_DIR . '/inc/seed-packages.php';
 require_once HJ_THEME_DIR . '/inc/acf-theme-settings.php';
 require_once HJ_THEME_DIR . '/inc/acf-blocks.php';
 require_once HJ_THEME_DIR . '/inc/theme-settings-helpers.php';
+require_once HJ_THEME_DIR . '/inc/navigation-mega-menu.php';
 
 // Load text domain
 function hj_theme_load_textdomain() {
