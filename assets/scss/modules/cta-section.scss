@@ -1,0 +1,50 @@
+/**
+ * CTA Section Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.module-cta-section {
+	padding: 60px 0;
+
+	.cta-section-inner {
+		max-width: 900px;
+	}
+
+	.cta-section-features {
+		margin: 24px 0;
+		display: grid;
+		gap: 16px;
+
+		@include media-md {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	.cta-section-feature {
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: $border-radius-lg;
+		padding: 16px;
+		display: grid;
+		grid-template-columns: 40px 1fr;
+		gap: 12px;
+		background: $color-white;
+	}
+
+	.cta-section-feature-icon img {
+		width: 32px;
+		height: 32px;
+		display: block;
+	}
+
+	.cta-section-feature-title {
+		margin: 0 0 $spacing-xs 0;
+		font-size: 1.05rem;
+	}
+
+	.cta-section-feature-description {
+		margin: 0;
+		color: $color-secondary;
+		line-height: 1.7;
+	}
+}

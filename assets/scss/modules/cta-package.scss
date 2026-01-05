@@ -1,0 +1,51 @@
+/**
+ * CTA Package Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.module-cta-package {
+	padding: 60px 0;
+
+	.cta-package-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		align-items: center;
+
+		@include media-lg {
+			grid-template-columns: 1.1fr 0.9fr;
+			gap: 48px;
+		}
+	}
+
+	.cta-package-subheading {
+		margin: 0 0 $spacing-sm 0;
+		color: $color-secondary;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+	}
+
+	.cta-package-heading {
+		margin: 0 0 $spacing-md 0;
+		font-size: 2rem;
+
+		@include media-lg {
+			font-size: 2.4rem;
+		}
+	}
+
+	.cta-package-text {
+		color: $color-secondary;
+		line-height: 1.8;
+		margin-bottom: $spacing-lg;
+	}
+
+	.cta-package-media img {
+		width: 100%;
+		height: auto;
+		border-radius: $border-radius-lg;
+		display: block;
+	}
+}

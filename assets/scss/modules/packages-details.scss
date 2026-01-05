@@ -1,0 +1,154 @@
+/**
+ * Packages Details Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.module-packages-details {
+	padding: 60px 0;
+
+	.packages-details-tabs {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		margin: 24px 0;
+	}
+
+	.packages-details-tab {
+		appearance: none;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		background: $color-white;
+		padding: 10px 14px;
+		border-radius: $border-radius-md;
+		cursor: pointer;
+		transition: $transition-fast;
+	}
+
+	.packages-details-tab[aria-selected='true'] {
+		border-color: rgba(0, 0, 0, 0.35);
+		transform: translateY(-1px);
+	}
+
+	.packages-details-panel-header {
+		margin-bottom: 18px;
+	}
+
+	.packages-details-title {
+		font-size: 1.4rem;
+		margin: 0 0 $spacing-xs 0;
+	}
+
+	.packages-details-price {
+		margin: 0 0 $spacing-sm 0;
+		font-weight: 700;
+	}
+
+	.packages-details-summary {
+		margin: 0;
+		color: $color-secondary;
+		line-height: 1.8;
+	}
+
+	.packages-details-accordions {
+		display: grid;
+		gap: 12px;
+	}
+
+	.packages-details-accordion {
+		border: 1px solid rgba(0, 0, 0, 0.12);
+		border-radius: $border-radius-lg;
+		overflow: hidden;
+		background: $color-white;
+	}
+
+	.packages-details-accordion-toggle {
+		width: 100%;
+		text-align: left;
+		background: transparent;
+		border: 0;
+		padding: 14px 16px;
+		display: grid;
+		grid-template-columns: 1fr 18px;
+		gap: 10px;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.packages-details-accordion-icon {
+		width: 18px;
+		height: 18px;
+		position: relative;
+	}
+
+	.packages-details-accordion-icon::before,
+	.packages-details-accordion-icon::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 12px;
+		height: 2px;
+		background: rgba(0, 0, 0, 0.65);
+		transform: translate(-50%, -50%);
+	}
+
+	.packages-details-accordion-icon::after {
+		transform: translate(-50%, -50%) rotate(90deg);
+	}
+
+	.packages-details-accordion-toggle[aria-expanded='true'] .packages-details-accordion-icon::after {
+		display: none;
+	}
+
+	.packages-details-accordion-panel {
+		padding: 0 16px 16px;
+	}
+
+	.packages-details-items {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 10px;
+	}
+
+	.packages-details-items--biochemistry {
+		@include media-lg {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		@include media-md {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	.packages-details-item {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		gap: 10px;
+		align-items: start;
+	}
+
+	.packages-details-item-icon img {
+		width: 18px;
+		height: 18px;
+		display: block;
+	}
+
+	.packages-details-additional-wrap {
+		margin-top: 24px;
+	}
+
+	.packages-details-additional-toggle {
+		appearance: none;
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		background: $color-white;
+		padding: 12px 14px;
+		border-radius: $border-radius-md;
+		cursor: pointer;
+	}
+
+	.packages-details-additional {
+		margin-top: 14px;
+	}
+}

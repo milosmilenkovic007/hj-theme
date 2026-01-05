@@ -1,0 +1,51 @@
+/**
+ * CTA Section Module Styles
+ */
+/**
+ * Variables
+ */
+/**
+ * CTA Section Module Styles
+ */
+/**
+ * Mixins
+ */
+.module-cta-section {
+  padding: 60px 0;
+}
+.module-cta-section .cta-section-inner {
+  max-width: 900px;
+}
+.module-cta-section .cta-section-features {
+  margin: 24px 0;
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .module-cta-section .cta-section-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.module-cta-section .cta-section-feature {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  background: #ffffff;
+}
+.module-cta-section .cta-section-feature-icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.module-cta-section .cta-section-feature-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+}
+.module-cta-section .cta-section-feature-description {
+  margin: 0;
+  color: #6c757d;
+  line-height: 1.7;
+}

@@ -682,6 +682,632 @@
           "max": ""
         },
         {
+          "key": "layout_packages_showcase",
+          "name": "packages-showcase",
+          "label": "Packages Showcase",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_packages_showcase_heading",
+              "label": "Section Title",
+              "name": "title",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_packages_showcase_background_color",
+              "label": "Background Color",
+              "name": "background_color",
+              "aria-label": "",
+              "type": "color_picker",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "#ffffff"
+            },
+            {
+              "key": "field_packages_showcase_blocks",
+              "label": "Packages",
+              "name": "packages",
+              "aria-label": "",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "collapsed": "",
+              "min": 0,
+              "max": 0,
+              "layout": "block",
+              "button_label": "Add Package Block",
+              "sub_fields": [
+                {
+                  "key": "field_packages_showcase_block_image",
+                  "label": "Image",
+                  "name": "image",
+                  "aria-label": "",
+                  "type": "image",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "return_format": "id",
+                  "preview_size": "medium",
+                  "library": "all",
+                  "min_width": "",
+                  "min_height": "",
+                  "min_size": "",
+                  "max_width": "",
+                  "max_height": "",
+                  "max_size": "",
+                  "mime_types": ""
+                },
+                {
+                  "key": "field_packages_showcase_block_image_position",
+                  "label": "Image Position",
+                  "name": "image_position",
+                  "aria-label": "",
+                  "type": "radio",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "choices": {
+                    "left": "Image Left, Content Right",
+                    "right": "Image Right, Content Left"
+                  },
+                  "default_value": "left",
+                  "layout": "horizontal",
+                  "return_format": "value"
+                },
+                {
+                  "key": "field_packages_showcase_block_heading",
+                  "label": "Heading",
+                  "name": "heading",
+                  "aria-label": "",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 1,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": ""
+                },
+                {
+                  "key": "field_packages_showcase_block_description",
+                  "label": "Description",
+                  "name": "description",
+                  "aria-label": "",
+                  "type": "textarea",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": ""
+                },
+                {
+                  "key": "field_packages_showcase_block_items",
+                  "label": "Items",
+                  "name": "items",
+                  "aria-label": "",
+                  "type": "repeater",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "collapsed": "",
+                  "min": 0,
+                  "max": 0,
+                  "layout": "table",
+                  "button_label": "Add Item",
+                  "sub_fields": [
+                    {
+                      "key": "field_packages_showcase_block_item_icon",
+                      "label": "Icon",
+                      "name": "icon",
+                      "aria-label": "",
+                      "type": "image",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                      },
+                      "return_format": "id",
+                      "preview_size": "thumbnail",
+                      "library": "all",
+                      "min_width": "",
+                      "min_height": "",
+                      "min_size": "",
+                      "max_width": "",
+                      "max_height": "",
+                      "max_size": "",
+                      "mime_types": ""
+                    },
+                    {
+                      "key": "field_packages_showcase_block_item_text",
+                      "label": "Text",
+                      "name": "text",
+                      "aria-label": "",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 1,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                      },
+                      "default_value": "",
+                      "maxlength": ""
+                    }
+                  ]
+                },
+                {
+                  "key": "field_packages_showcase_block_button_text",
+                  "label": "Button Text",
+                  "name": "button_text",
+                  "aria-label": "",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": ""
+                },
+                {
+                  "key": "field_packages_showcase_block_button_link",
+                  "label": "Button Link",
+                  "name": "button_link",
+                  "aria-label": "",
+                  "type": "url",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": ""
+                }
+              ]
+            }
+          ],
+          "min": "",
+          "max": ""
+        },
+        {
+          "key": "layout_packages_details",
+          "name": "packages-details",
+          "label": "Packages Details",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_packages_details_heading",
+              "label": "Heading",
+              "name": "heading",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_packages_details_description",
+              "label": "Description",
+              "name": "description",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_packages_details_packages",
+              "label": "Select Packages",
+              "name": "packages",
+              "aria-label": "",
+              "type": "relationship",
+              "instructions": "Select which Packages (CPT) to compare. Drag & drop to reorder.",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "post_type": [
+                "package"
+              ],
+              "taxonomy": [],
+              "filters": [
+                "search",
+                "taxonomy"
+              ],
+              "elements": [
+                "featured_image"
+              ],
+              "return_format": "id",
+              "min": 0,
+              "max": 0
+            },
+            {
+              "key": "field_packages_details_additional_package",
+              "label": "Additional Package",
+              "name": "additional_package",
+              "aria-label": "",
+              "type": "relationship",
+              "instructions": "Optional: select one additional package to display below the comparison grid.",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "post_type": [
+                "package"
+              ],
+              "taxonomy": [],
+              "filters": [
+                "search",
+                "taxonomy"
+              ],
+              "elements": [
+                "featured_image"
+              ],
+              "return_format": "id",
+              "min": 0,
+              "max": 1
+            }
+          ],
+          "min": "",
+          "max": ""
+        },
+        {
+          "key": "layout_cta_package",
+          "name": "cta-package",
+          "label": "CTA Package",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_cta_package_heading",
+              "label": "Heading",
+              "name": "heading",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_cta_package_subheading",
+              "label": "Subheading",
+              "name": "subheading",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_cta_package_content",
+              "label": "Content",
+              "name": "content",
+              "aria-label": "",
+              "type": "textarea",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": "",
+              "rows": 4,
+              "new_lines": ""
+            },
+            {
+              "key": "field_cta_package_button_text",
+              "label": "Button Text",
+              "name": "button_text",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_cta_package_button_link",
+              "label": "Button Link",
+              "name": "button_link",
+              "aria-label": "",
+              "type": "url",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": ""
+            },
+            {
+              "key": "field_cta_package_image",
+              "label": "Image",
+              "name": "image",
+              "aria-label": "",
+              "type": "image",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "return_format": "id",
+              "preview_size": "medium",
+              "library": "all",
+              "min_width": "",
+              "min_height": "",
+              "min_size": "",
+              "max_width": "",
+              "max_height": "",
+              "max_size": "",
+              "mime_types": ""
+            }
+          ],
+          "min": "",
+          "max": ""
+        },
+        {
+          "key": "layout_cta_section",
+          "name": "cta-section",
+          "label": "CTA Section",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_cta_section_heading",
+              "label": "Heading",
+              "name": "heading",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_cta_section_content",
+              "label": "Content",
+              "name": "content",
+              "aria-label": "",
+              "type": "wysiwyg",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "tabs": "all",
+              "toolbar": "basic",
+              "media_upload": 0
+            },
+            {
+              "key": "field_cta_section_features",
+              "label": "Features",
+              "name": "features",
+              "aria-label": "",
+              "type": "repeater",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+              },
+              "collapsed": "",
+              "min": 0,
+              "max": 0,
+              "layout": "block",
+              "button_label": "Add Feature",
+              "sub_fields": [
+                {
+                  "key": "field_cta_section_feature_icon",
+                  "label": "Icon",
+                  "name": "icon",
+                  "aria-label": "",
+                  "type": "image",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "return_format": "id",
+                  "preview_size": "thumbnail",
+                  "library": "all",
+                  "min_width": "",
+                  "min_height": "",
+                  "min_size": "",
+                  "max_width": "",
+                  "max_height": "",
+                  "max_size": "",
+                  "mime_types": ""
+                },
+                {
+                  "key": "field_cta_section_feature_title",
+                  "label": "Title",
+                  "name": "title",
+                  "aria-label": "",
+                  "type": "text",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": ""
+                },
+                {
+                  "key": "field_cta_section_feature_description",
+                  "label": "Description",
+                  "name": "description",
+                  "aria-label": "",
+                  "type": "textarea",
+                  "instructions": "",
+                  "required": 0,
+                  "conditional_logic": 0,
+                  "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                  },
+                  "default_value": "",
+                  "maxlength": ""
+                }
+              ]
+            },
+            {
+              "key": "field_cta_section_button_text",
+              "label": "Button Text",
+              "name": "button_text",
+              "aria-label": "",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "",
+              "maxlength": ""
+            },
+            {
+              "key": "field_cta_section_button_link",
+              "label": "Button Link",
+              "name": "button_link",
+              "aria-label": "",
+              "type": "url",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+              },
+              "default_value": ""
+            }
+          ],
+          "min": "",
+          "max": ""
+        },
+        {
           "key": "layout_testimonials",
           "name": "testimonials",
           "label": "Testimonials Section",

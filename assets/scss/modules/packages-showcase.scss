@@ -1,0 +1,84 @@
+/**
+ * Packages Showcase Module Styles
+ */
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.module-packages-showcase {
+	padding: 60px 0;
+
+	.packages-showcase {
+		display: grid;
+		gap: 40px;
+
+		@include media-lg {
+			gap: 60px;
+		}
+	}
+
+	.packages-showcase-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		align-items: center;
+
+		@include media-lg {
+			grid-template-columns: 1fr 1fr;
+			gap: 48px;
+		}
+	}
+
+	.packages-showcase-row--image-right {
+		@include media-lg {
+			.packages-showcase-media {
+				order: 2;
+			}
+			.packages-showcase-content {
+				order: 1;
+			}
+		}
+	}
+
+	.packages-showcase-media img {
+		width: 100%;
+		height: auto;
+		border-radius: $border-radius-lg;
+		display: block;
+	}
+
+	.packages-showcase-heading {
+		font-size: 1.5rem;
+		margin-bottom: $spacing-sm;
+
+		@include media-lg {
+			font-size: 1.75rem;
+		}
+	}
+
+	.packages-showcase-description {
+		color: $color-secondary;
+		line-height: 1.8;
+		margin-bottom: $spacing-md;
+	}
+
+	.packages-showcase-items {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 $spacing-lg 0;
+		display: grid;
+		gap: 10px;
+	}
+
+	.packages-showcase-item {
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		gap: 10px;
+		align-items: start;
+	}
+
+	.packages-showcase-item-icon img {
+		width: 18px;
+		height: 18px;
+		display: block;
+	}
+}

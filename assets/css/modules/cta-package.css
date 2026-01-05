@@ -1,0 +1,54 @@
+/**
+ * CTA Package Module Styles
+ */
+/**
+ * Variables
+ */
+/**
+ * CTA Package Module Styles
+ */
+/**
+ * Mixins
+ */
+.module-cta-package {
+  padding: 60px 0;
+}
+.module-cta-package .cta-package-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .module-cta-package .cta-package-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+  }
+}
+.module-cta-package .cta-package-subheading {
+  margin: 0 0 0.5rem 0;
+  color: #6c757d;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.module-cta-package .cta-package-heading {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+@media (min-width: 992px) {
+  .module-cta-package .cta-package-heading {
+    font-size: 2.4rem;
+  }
+}
+.module-cta-package .cta-package-text {
+  color: #6c757d;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.module-cta-package .cta-package-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
