@@ -14,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	const menuToggle = document.getElementById('header-menu-toggle');
 	const mobileMenu = document.getElementById('header-mobile-menu');
 
+	console.log('Menu Toggle:', menuToggle);
+	console.log('Mobile Menu:', mobileMenu);
+
 	if (!menuToggle || !mobileMenu) {
+		console.error('Mobile menu elements not found!');
 		return;
 	}
 
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			// Insert toggle between the parent link and submenu.
 			li.insertBefore(btn, submenu);
 
-			btn.addEventListener('click', (e) => {
+			const toggleSubmenu = (e) => {
 				e.preventDefault();
 				e.stopPropagation();
 
@@ -61,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				const isOpen = li.classList.toggle('is-submenu-open');
 				btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			});
+			};
+
+			btn.addEventListener('click', toggleSubmenu);
+			link.addEventListener('click', toggleSubmenu);
 		});
 	};
 
@@ -70,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Toggle menu on button click
 	menuToggle.addEventListener('click', function(e) {
 		e.preventDefault();
+		console.log('Toggle button clicked!');
 		const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+		console.log('Current expanded state:', isExpanded);
 		
 		menuToggle.setAttribute('aria-expanded', !isExpanded);
 		menuToggle.classList.toggle('active');
@@ -85,10 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 
-	// Close menu when clicking on a link
+	// Close menu when clicking on a link (but not parent items with children)
 	const menuLinks = mobileMenu.querySelectorAll('a');
 	menuLinks.forEach(link => {
-		link.addEventListener('click', function() {
+		link.addEventListener('click', function(e) {
+			// Don't close menu if this is a parent link with submenu
+			const parentLi = link.closest('li.menu-item-has-children');
+			if (parentLi && parentLi.querySelector(':scope > a') === link) {
+				return;
+			}
+			
 			menuToggle.setAttribute('aria-expanded', 'false');
 			menuToggle.classList.remove('active');
 			mobileMenu.classList.remove('active');
