@@ -8,7 +8,43 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<?php
+	// SEO Meta Tags from Theme Settings
+	if ( function_exists( 'get_field' ) ) {
+		$site_description = get_field( 'site_description', 'option' );
+		$google_verification = get_field( 'google_site_verification', 'option' );
+		
+		if ( $site_description && ! is_singular() ) {
+			echo '<meta name="description" content="' . esc_attr( $site_description ) . '">' . "\n\t";
+		}
+		
+		if ( $google_verification ) {
+			echo '<meta name="google-site-verification" content="' . esc_attr( $google_verification ) . '">' . "\n\t";
+		}
+	}
+	?>
+	
 	<?php wp_head(); ?>
+	
+	<?php
+	// Google Analytics (GA4)
+	if ( function_exists( 'get_field' ) ) {
+		$ga_id = get_field( 'google_analytics_id', 'option' );
+		if ( $ga_id ) {
+			?>
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $ga_id ); ?>"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', '<?php echo esc_js( $ga_id ); ?>');
+			</script>
+			<?php
+		}
+	}
+	?>
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>

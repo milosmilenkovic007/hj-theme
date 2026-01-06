@@ -556,6 +556,158 @@
       "ui_off_text": "Disabled"
     },
     {
+      "key": "field_hj_api_integration_tab",
+      "label": "API Integration",
+      "name": "",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_hj_zoho_crm_heading",
+      "label": "Zoho CRM Integration",
+      "name": "zoho_crm_heading",
+      "type": "message",
+      "message": "Configure Zoho CRM integration for Fluent Forms submissions.<br><br><strong>Client Name:</strong> health checkup istanbul<br><strong>Homepage URL:</strong> https://healthcheckupistanbul.com<br><strong>Authorized Redirect URI:</strong> https://healthcheckupistanbul.com/wp-admin/options-general.php?page=zoho-crm-settings<br><br><strong>Authentication:</strong> Go to <a href=\"/wp-admin/options-general.php?page=zoho-crm-settings\" class=\"button button-primary\" style=\"margin-left:10px;\">Zoho CRM Settings</a> to authenticate and view logs."
+    },
+    {
+      "key": "field_hj_zoho_client_id",
+      "label": "Zoho Client ID",
+      "name": "zoho_client_id",
+      "type": "text",
+      "instructions": "Enter your Zoho CRM Client ID from the Zoho API Console",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_zoho_client_secret",
+      "label": "Zoho Client Secret",
+      "name": "zoho_client_secret",
+      "type": "password",
+      "instructions": "Enter your Zoho CRM Client Secret",
+      "required": 0,
+      "default_value": ""
+    },
+    {
+      "key": "field_hj_zoho_redirect_uri",
+      "label": "Zoho Redirect URI",
+      "name": "zoho_redirect_uri",
+      "type": "url",
+      "instructions": "Authorized Redirect URI (must match your Zoho app settings)",
+      "required": 0,
+      "default_value": "https://healthcheckupistanbul.com/wp-admin/options-general.php?page=zoho-crm-settings",
+      "placeholder": "https://healthcheckupistanbul.com/wp-admin/options-general.php?page=zoho-crm-settings"
+    },
+    {
+      "key": "field_hj_zoho_auth_status",
+      "label": "Authentication Status",
+      "name": "zoho_auth_status",
+      "type": "message",
+      "message": "Loading authentication status..."
+    },
+    {
+      "key": "field_hj_zoho_enable",
+      "label": "Enable Zoho CRM Integration",
+      "name": "zoho_enable",
+      "type": "true_false",
+      "instructions": "Enable automatic lead submission to Zoho CRM from Fluent Forms",
+      "required": 0,
+      "message": "Enable Integration",
+      "default_value": 0,
+      "ui": 1,
+      "ui_on_text": "Enabled",
+      "ui_off_text": "Disabled"
+    },
+    {
+      "key": "field_hj_zoho_form_id",
+      "label": "Fluent Form ID",
+      "name": "zoho_form_id",
+      "type": "number",
+      "instructions": "Enter the Fluent Form ID to integrate (e.g., 3)",
+      "required": 0,
+      "default_value": 3,
+      "min": 1
+    },
+    {
+      "key": "field_hj_zoho_lead_source",
+      "label": "Lead Source Name",
+      "name": "zoho_lead_source",
+      "type": "text",
+      "instructions": "The source name for leads sent to Zoho CRM (e.g., HCI Website, Website, Contact Form)",
+      "required": 0,
+      "default_value": "HCI Website",
+      "placeholder": "HCI Website"
+    },
+    {
+      "key": "field_hj_zoho_field_mapping",
+      "label": "Field Mapping",
+      "name": "zoho_field_mapping",
+      "type": "repeater",
+      "instructions": "Map Fluent Forms fields to Zoho CRM fields. Drag & drop to reorder. Default mappings are pre-filled below.",
+      "required": 0,
+      "layout": "row",
+      "button_label": "Add Field Mapping",
+      "min": 0,
+      "max": 0,
+      "collapsed": "field_hj_zoho_ff_field",
+      "sub_fields": [
+        {
+          "key": "field_hj_zoho_ff_field",
+          "label": "Fluent Forms Field",
+          "name": "fluent_field",
+          "type": "text",
+          "instructions": "Fluent Forms field name (e.g., names.first_name, names.last_name, email, subject, description)",
+          "required": 1,
+          "placeholder": "names.first_name",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_hj_zoho_crm_field",
+          "label": "Zoho CRM Field",
+          "name": "zoho_field",
+          "type": "text",
+          "instructions": "Zoho CRM API field name (e.g., First_Name, Last_Name, Email, Phone)",
+          "required": 1,
+          "placeholder": "First_Name",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ],
+      "default_value": [
+        {
+          "fluent_field": "names.first_name",
+          "zoho_field": "First_Name"
+        },
+        {
+          "fluent_field": "names.last_name",
+          "zoho_field": "Last_Name"
+        },
+        {
+          "fluent_field": "email",
+          "zoho_field": "Email"
+        },
+        {
+          "fluent_field": "subject",
+          "zoho_field": "Description"
+        },
+        {
+          "fluent_field": "description",
+          "zoho_field": "Multi_Line_7"
+        },
+        {
+          "fluent_field": "phone",
+          "zoho_field": "Phone"
+        },
+        {
+          "fluent_field": "zc_gad",
+          "zoho_field": "$gclid"
+        }
+      ]
+    },
+    {
       "key": "field_hj_admin_tab",
       "label": "Admin",
       "name": "",
