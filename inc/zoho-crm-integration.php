@@ -146,6 +146,9 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 		return;
 	}
 
+	// Debug: Log all form data
+	error_log( 'Zoho CRM Debug - Form Data: ' . print_r( $form_data, true ) );
+
 	$access_token = hj_get_zoho_access_token();
 
 	if ( ! $access_token ) {
@@ -197,6 +200,9 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 	if ( empty( $lead_data['Last_Name'] ) ) {
 		$lead_data['Last_Name'] = isset( $lead_data['Full_Name'] ) ? $lead_data['Full_Name'] : 'Unknown';
 	}
+
+	// Debug: Log lead data being sent
+	error_log( 'Zoho CRM Debug - Lead Data being sent: ' . print_r( $lead_data, true ) );
 
 	// Send to Zoho CRM
 	$zoho_api_url = ZOHO_API_URL . '/crm/v2/Leads';
@@ -293,6 +299,31 @@ function hj_zoho_crm_settings_page() {
 		wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'hj-theme' ) );
 	}
 
+	// Fetch Zoho fields
+	$zoho_fields = array();
+	if ( isset( $_GET['fetch_fields'] ) && wp_verify_nonce( $_GET['_wpnonce'], 'fetch_zoho_fields' ) ) {
+		$access_token = hj_get_zoho_access_token();
+		if ( $access_token ) {
+			$fields_url = ZOHO_API_URL . '/crm/v2/settings/fields?module=Leads';
+			$response = wp_remote_get(
+				$fields_url,
+				array(
+					'headers' => array(
+						'Authorization' => "Zoho-oauthtoken {$access_token}",
+					),
+				)
+			);
+
+			if ( ! is_wp_error( $response ) ) {
+				$body = wp_remote_retrieve_body( $response );
+				$data = json_decode( $body, true );
+				if ( isset( $data['fields'] ) ) {
+					$zoho_fields = $data['fields'];
+				}
+			}
+		}
+	}
+
 	// Clear logs
 	if ( isset( $_POST['clear_logs_nonce'] ) && wp_verify_nonce( $_POST['clear_logs_nonce'], 'clear_zoho_logs' ) ) {
 		hj_clear_zoho_logs();
@@ -371,6 +402,37 @@ function hj_zoho_crm_settings_page() {
 				<p>Click the button below to authorize this application to access your Zoho CRM account.</p>
 				<p><a href="<?php echo esc_url( $auth_url ); ?>" class="button button-primary button-large">Authenticate with Zoho CRM</a></p>
 			</div>
+		<?php endif; ?>
+
+		<hr>
+
+		<h2>Available Zoho CRM Fields</h2>
+		<p>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'fetch_fields', '1' ), 'fetch_zoho_fields' ) ); ?>" class="button">
+				Show All Available Zoho Fields
+			</a>
+		</p>
+
+		<?php if ( ! empty( $zoho_fields ) ) : ?>
+			<table class="wp-list-table widefat fixed striped" style="margin-top: 10px; max-width: 800px;">
+				<thead>
+					<tr>
+						<th>Field Label</th>
+						<th>API Name (use this in mapping)</th>
+						<th>Type</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ( $zoho_fields as $field ) : ?>
+						<?php if ( ! isset( $field['field_label'] ) || ! isset( $field['api_name'] ) ) continue; ?>
+						<tr>
+							<td><?php echo esc_html( $field['field_label'] ); ?></td>
+							<td><code style="background:#f0f0f0;padding:2px 6px;border-radius:3px;"><?php echo esc_html( $field['api_name'] ); ?></code></td>
+							<td><?php echo esc_html( $field['data_type'] ?? 'N/A' ); ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
 		<?php endif; ?>
 
 		<hr>
