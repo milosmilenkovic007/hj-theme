@@ -32,21 +32,26 @@
 
 		.fluentform label,
 		.fluentform .ff-el-input--label {
-			color: rgba(229, 231, 235, 0.9) !important;
+			color: #4b5563 !important;
 		}
 
 		.fluentform .ff-el-form-control {
-			background: rgba(255, 255, 255, 0.04);
-			border: 1px solid rgba(255, 255, 255, 0.12);
-			color: #e5e7eb !important;
+			background: #ffffff;
+			border: 1px solid #d1d5db;
+			color: #1f2937 !important;
 			border-radius: $border-radius-md;
 			transition: $transition-fast;
 
 			&:focus {
 				outline: none;
 				border-color: $color-primary !important;
-				box-shadow: 0 0 0 3px rgba($color-primary, 0.18) !important;
+				box-shadow: 0 0 0 3px rgba($color-primary, 0.15) !important;
 			}
+		}
+
+		// Placeholder text styling
+		.fluentform .ff-el-form-control::placeholder {
+			color: #9ca3af !important;
 		}
 
 		// Submit button should use theme primary colors
@@ -76,11 +81,17 @@
 			select {
 				padding: $spacing-md;
 				margin-bottom: $spacing-md;
-				border: 1px solid #ddd;
+				border: 1px solid #d1d5db;
 				border-radius: $border-radius-md;
 				font-size: $font-size-base;
 				font-family: $font-family-base;
 				transition: $transition-fast;
+				background: #ffffff;
+				color: #1f2937;
+
+				&::placeholder {
+					color: #9ca3af;
+				}
 
 				&:focus {
 					outline: none;

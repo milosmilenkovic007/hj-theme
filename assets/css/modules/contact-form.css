@@ -110,19 +110,22 @@
 }
 .module-contact-form .form-container .fluentform label,
 .module-contact-form .form-container .fluentform .ff-el-input--label {
-  color: rgba(229, 231, 235, 0.9) !important;
+  color: #4b5563 !important;
 }
 .module-contact-form .form-container .fluentform .ff-el-form-control {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #e5e7eb !important;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937 !important;
   border-radius: 6px;
   transition: all 0.15s ease-in-out;
 }
 .module-contact-form .form-container .fluentform .ff-el-form-control:focus {
   outline: none;
   border-color: #007bff !important;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15) !important;
+}
+.module-contact-form .form-container .fluentform .ff-el-form-control::placeholder {
+  color: #9ca3af !important;
 }
 .module-contact-form .form-container .fluentform .ff-btn,
 .module-contact-form .form-container .fluentform .ff-btn-submit,
@@ -184,11 +187,18 @@
 .module-contact-form .form-container form select {
   padding: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #d1d5db;
   border-radius: 6px;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: all 0.15s ease-in-out;
+  background: #ffffff;
+  color: #1f2937;
+}
+.module-contact-form .form-container form input::placeholder,
+.module-contact-form .form-container form textarea::placeholder,
+.module-contact-form .form-container form select::placeholder {
+  color: #9ca3af;
 }
 .module-contact-form .form-container form input:focus,
 .module-contact-form .form-container form textarea:focus,

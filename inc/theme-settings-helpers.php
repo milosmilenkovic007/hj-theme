@@ -103,11 +103,11 @@ function hj_show_footer_newsletter() {
 }
 
 function hj_get_footer_background() {
-	return hj_get_setting( 'footer_background', '#0b1220' );
+	return hj_get_setting( 'footer_background', '#49c1bc' );
 }
 
 function hj_get_footer_bottom_bar_color() {
-	return hj_get_setting( 'footer_bottom_bar_color', '#0a0f1c' );
+	return hj_get_setting( 'footer_bottom_bar_color', '#0b3630' );
 }
 
 function hj_get_footer_certificate() {
@@ -165,7 +165,7 @@ function hj_get_heading_color() {
 }
 
 function hj_get_footer_copyright_color() {
-	return hj_get_setting( 'footer_copyright_color', '#9ca3af' );
+	return hj_get_setting( 'footer_copyright_color', '#47bbb7' );
 }
 
 function hj_get_background_color() {
@@ -251,9 +251,9 @@ function hj_output_theme_css() {
 	$radius = hj_get_border_radius();
 	$btn_radius = hj_get_button_radius();
 	$btn_border_color = hj_get_button_border_color();
-	$btn_primary_bg = hj_get_setting( 'button_primary_bg', '#007bff' );
-	$btn_primary_text = hj_get_setting( 'button_primary_text', '#ffffff' );
-	$btn_secondary_bg = hj_get_setting( 'button_secondary_bg', '#6c757d' );
+	$btn_primary_bg = hj_get_setting( 'button_primary_bg', '#49c1bc' );
+	$btn_primary_text = hj_get_setting( 'button_primary_text', '#161616' );
+	$btn_secondary_bg = hj_get_setting( 'button_secondary_bg', '#49c1bc' );
 	$btn_secondary_text = hj_get_setting( 'button_secondary_text', '#ffffff' );
 
 	?>
