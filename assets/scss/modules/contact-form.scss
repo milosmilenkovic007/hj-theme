@@ -26,6 +26,9 @@
 		}
 
 		.fluentform .ff-el-group { padding: 0 !important; }
+		.fluentform .ff_submit_btn_wrapper {
+			margin-top: $spacing-sm;
+		}
 		.fluentform .ff-message-success,
 		.fluentform .ff-message-warning,
 		.fluentform .ff-message-error { background: transparent !important; border: none !important; }
@@ -52,6 +55,58 @@
 		// Placeholder text styling
 		.fluentform .ff-el-form-control::placeholder {
 			color: #9ca3af !important;
+		}
+
+		.fluentform .iti {
+			display: block;
+			width: 100%;
+		}
+
+		.fluentform .iti__flag-container,
+		.fluentform .iti__country-container {
+			padding: 0 !important;
+		}
+
+		.fluentform .iti__selected-country {
+			display: inline-flex;
+			align-items: center;
+			height: 100%;
+			min-width: 5.75rem;
+			padding: 0 0.9rem !important;
+			background: transparent !important;
+			border: none !important;
+			border-right: 1px solid #e5e7eb;
+			border-radius: $border-radius-md 0 0 $border-radius-md;
+			box-shadow: none !important;
+			color: #1f2937 !important;
+			transition: $transition-fast;
+		}
+
+		.fluentform .iti__selected-country:hover,
+		.fluentform .iti__selected-country:focus,
+		.fluentform .iti__selected-country:focus-visible {
+			background: rgba($color-primary, 0.04) !important;
+			box-shadow: none !important;
+			outline: none;
+		}
+
+		.fluentform .iti__selected-dial-code {
+			margin-left: 0.4rem;
+			color: #6b7280;
+			font-size: 0.95em;
+		}
+
+		.fluentform .iti input[type='tel'],
+		.fluentform .iti input.ff-el-form-control[type='tel'] {
+			padding-left: 7.25rem !important;
+		}
+
+		.fluentform .iti__country-list {
+			border: 1px solid #d1d5db;
+			border-radius: $border-radius-md;
+			box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+			color: #1f2937;
+			margin-top: 0.35rem;
 		}
 
 		// Submit button should use theme primary colors
@@ -105,12 +160,13 @@
 				min-height: 120px;
 			}
 
-			button,
+			.ff-btn-submit,
+			.ff-btn-primary,
+			button[type='submit'],
 			input[type='submit'] {
 				@include buttons.btn-base;
 				@include buttons.btn-primary-variant;
-				align-self: center;
-				margin-top: $spacing-lg;
+				margin-top: $spacing-md;
 			}
 		}
 	}

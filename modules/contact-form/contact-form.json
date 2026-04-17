@@ -21,7 +21,7 @@
       "name": "form_id",
       "type": "text",
       "required": true,
-      "instructions": "Enter a Fluent Forms ID (e.g., 3) or a full shortcode like [fluentform id=\"3\"]."
+      "instructions": "Enter a Fluent Forms ID (e.g., 3 or 4) or a full shortcode like [fluentform id=\"3\"]."
     },
     {
       "key": "field_contact_bg_color",

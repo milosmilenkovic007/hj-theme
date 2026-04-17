@@ -45,6 +45,41 @@ function hj_is_zoho_enabled() {
 }
 
 /**
+ * Get configured Fluent Forms IDs for Zoho sync.
+ *
+ * Supports legacy single-value configs and comma-separated values.
+ *
+ * @return int[]
+ */
+function hj_get_zoho_form_ids() {
+	$configured_value = function_exists( 'get_field' ) ? get_field( 'zoho_form_id', 'option' ) : '';
+
+	if ( is_array( $configured_value ) ) {
+		$raw_values = $configured_value;
+	} else {
+		$raw_values = preg_split( '/[\s,]+/', (string) $configured_value, -1, PREG_SPLIT_NO_EMPTY );
+	}
+
+	$form_ids = array_values(
+		array_unique(
+			array_filter(
+				array_map( 'intval', $raw_values )
+			)
+		)
+	);
+
+	if ( empty( $form_ids ) ) {
+		return array( 3, 4 );
+	}
+
+	if ( 1 === count( $form_ids ) && in_array( $form_ids[0], array( 3, 4 ), true ) ) {
+		return array( 3, 4 );
+	}
+
+	return $form_ids;
+}
+
+/**
  * Get valid Zoho access token (refresh if needed)
  *
  * @return string|false Access token or false on failure
@@ -138,11 +173,11 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 		return;
 	}
 
-	// Get configured form ID
-	$configured_form_id = function_exists( 'get_field' ) ? (int) get_field( 'zoho_form_id', 'option' ) : 3;
+	// Get configured form IDs
+	$configured_form_ids = hj_get_zoho_form_ids();
 	
-	// Only process configured form
-	if ( ! isset( $form->id ) || (int) $form->id !== $configured_form_id ) {
+	// Only process configured forms
+	if ( ! isset( $form->id ) || ! in_array( (int) $form->id, $configured_form_ids, true ) ) {
 		return;
 	}
 
@@ -161,7 +196,7 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 	
 	// Build lead data from field mappings
 	$lead_data = array();
-	$lead_name = 'Unknown';
+	$lead_name = '';
 
 	if ( is_array( $field_mappings ) && ! empty( $field_mappings ) ) {
 		foreach ( $field_mappings as $mapping ) {
@@ -176,18 +211,25 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 			$value = hj_get_nested_form_value( $form_data, $fluent_field );
 
 			if ( $value !== null && $value !== '' ) {
-				$lead_data[ $zoho_field ] = is_array( $value ) ? implode( ', ', $value ) : $value;
+				$mapped_value = is_array( $value ) ? implode( ', ', $value ) : $value;
+				$lead_data[ $zoho_field ] = $mapped_value;
 				
 				// Track lead name for logging
-				if ( in_array( $zoho_field, array( 'Full_Name', 'First_Name', 'Last_Name' ), true ) && empty( $lead_name ) ) {
-					$lead_name = $value;
+				if ( in_array( $zoho_field, array( 'Full_Name', 'First_Name', 'Last_Name' ), true ) && '' === $lead_name ) {
+					$lead_name = $mapped_value;
 				}
 			}
 		}
 	} else {
 		// Fallback to default mappings if no custom mappings configured
 		$lead_data = hj_get_default_zoho_mapping( $form_data );
-		$lead_name = isset( $form_data['names']['first_name'] ) ? $form_data['names']['first_name'] : 'Unknown';
+		$lead_name = isset( $form_data['names']['first_name'] ) ? sanitize_text_field( $form_data['names']['first_name'] ) : '';
+	}
+
+	if ( ! empty( $lead_data['Phone'] ) && empty( $lead_data['Mobile'] ) ) {
+		$lead_data['Mobile'] = $lead_data['Phone'];
+	} elseif ( ! empty( $lead_data['Mobile'] ) && empty( $lead_data['Phone'] ) ) {
+		$lead_data['Phone'] = $lead_data['Mobile'];
 	}
 
 	// Add automatic fields
@@ -198,7 +240,35 @@ function hj_send_to_zoho_crm( $entry_id, $form_data, $form ) {
 
 	// Ensure Last_Name is set (Zoho requirement)
 	if ( empty( $lead_data['Last_Name'] ) ) {
-		$lead_data['Last_Name'] = isset( $lead_data['Full_Name'] ) ? $lead_data['Full_Name'] : 'Unknown';
+		if ( ! empty( $lead_data['Full_Name'] ) ) {
+			$lead_data['Last_Name'] = $lead_data['Full_Name'];
+		} elseif ( ! empty( $lead_data['First_Name'] ) ) {
+			$lead_data['Last_Name'] = $lead_data['First_Name'];
+		} else {
+			$lead_data['Last_Name'] = 'Unknown';
+		}
+	}
+
+	if ( '' === $lead_name ) {
+		$lead_name = trim(
+			implode(
+				' ',
+				array_filter(
+					array(
+						isset( $lead_data['First_Name'] ) ? $lead_data['First_Name'] : '',
+						isset( $lead_data['Last_Name'] ) ? $lead_data['Last_Name'] : '',
+					)
+				)
+			)
+		);
+	}
+
+	if ( '' === $lead_name && ! empty( $lead_data['Full_Name'] ) ) {
+		$lead_name = $lead_data['Full_Name'];
+	}
+
+	if ( '' === $lead_name ) {
+		$lead_name = 'Unknown';
 	}
 
 	// Debug: Log lead data being sent
@@ -248,6 +318,10 @@ function hj_get_nested_form_value( $data, $key ) {
 	foreach ( $keys as $nested_key ) {
 		if ( is_array( $value ) && isset( $value[ $nested_key ] ) ) {
 			$value = $value[ $nested_key ];
+		} elseif ( is_array( $value ) && 'description' === $nested_key && isset( $value['message'] ) ) {
+			$value = $value['message'];
+		} elseif ( is_array( $value ) && 'message' === $nested_key && isset( $value['description'] ) ) {
+			$value = $value['description'];
 		} else {
 			return null;
 		}
@@ -263,16 +337,24 @@ function hj_get_nested_form_value( $data, $key ) {
  * @return array
  */
 function hj_get_default_zoho_mapping( $form_data ) {
-	$full_name   = isset( $form_data['names']['first_name'] ) ? sanitize_text_field( $form_data['names']['first_name'] ) : '';
+	$first_name  = isset( $form_data['names']['first_name'] ) ? sanitize_text_field( $form_data['names']['first_name'] ) : '';
+	$last_name   = isset( $form_data['names']['last_name'] ) ? sanitize_text_field( $form_data['names']['last_name'] ) : '';
+	$full_name   = trim( $first_name . ' ' . $last_name );
+	$email       = isset( $form_data['email'] ) ? sanitize_email( $form_data['email'] ) : '';
 	$phone       = isset( $form_data['phone'] ) ? sanitize_text_field( $form_data['phone'] ) : '';
-	$description = isset( $form_data['description'] ) ? sanitize_textarea_field( $form_data['description'] ) : '';
+	$subject     = isset( $form_data['subject'] ) ? sanitize_text_field( $form_data['subject'] ) : '';
+	$message     = isset( $form_data['message'] ) ? sanitize_textarea_field( $form_data['message'] ) : '';
+	$description = isset( $form_data['description'] ) ? sanitize_textarea_field( $form_data['description'] ) : $message;
 	$gclid       = isset( $form_data['zc_gad'] ) ? sanitize_text_field( $form_data['zc_gad'] ) : '';
 
 	return array(
 		'Full_Name'    => $full_name,
-		'Last_Name'    => $full_name ?: 'Unknown',
+		'First_Name'   => $first_name,
+		'Last_Name'    => $last_name ?: $first_name ?: 'Unknown',
+		'Email'        => $email,
 		'Phone'        => $phone,
 		'Mobile'       => $phone,
+		'Description'  => $subject,
 		'Multi_Line_7' => $description,
 		'$gclid'       => $gclid,
 	);
@@ -375,7 +457,7 @@ function hj_zoho_crm_settings_page() {
 			'client_id'    => $client_id,
 			'response_type'=> 'code',
 			'access_type'  => 'offline',
-			'redirect_uri' => urlencode( $redirect_uri ),
+			'redirect_uri' => $redirect_uri,
 		),
 		ZOHO_ACCOUNTS_URL . '/oauth/v2/auth'
 	);

@@ -1747,6 +1747,9 @@ p {
 .module-contact-form .form-container .fluentform .ff-el-group {
   padding: 0 !important;
 }
+.module-contact-form .form-container .fluentform .ff_submit_btn_wrapper {
+  margin-top: 0.5rem;
+}
 .module-contact-form .form-container .fluentform .ff-message-success,
 .module-contact-form .form-container .fluentform .ff-message-warning,
 .module-contact-form .form-container .fluentform .ff-message-error {
@@ -1771,6 +1774,51 @@ p {
 }
 .module-contact-form .form-container .fluentform .ff-el-form-control::placeholder {
   color: #9ca3af !important;
+}
+.module-contact-form .form-container .fluentform .iti {
+  display: block;
+  width: 100%;
+}
+.module-contact-form .form-container .fluentform .iti__flag-container,
+.module-contact-form .form-container .fluentform .iti__country-container {
+  padding: 0 !important;
+}
+.module-contact-form .form-container .fluentform .iti__selected-country {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  min-width: 5.75rem;
+  padding: 0 0.9rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-right: 1px solid #e5e7eb;
+  border-radius: 6px 0 0 6px;
+  box-shadow: none !important;
+  color: #1f2937 !important;
+  transition: all 0.15s ease-in-out;
+}
+.module-contact-form .form-container .fluentform .iti__selected-country:hover,
+.module-contact-form .form-container .fluentform .iti__selected-country:focus,
+.module-contact-form .form-container .fluentform .iti__selected-country:focus-visible {
+  background: rgba(0, 123, 255, 0.04) !important;
+  box-shadow: none !important;
+  outline: none;
+}
+.module-contact-form .form-container .fluentform .iti__selected-dial-code {
+  margin-left: 0.4rem;
+  color: #6b7280;
+  font-size: 0.95em;
+}
+.module-contact-form .form-container .fluentform .iti input[type=tel],
+.module-contact-form .form-container .fluentform .iti input.ff-el-form-control[type=tel] {
+  padding-left: 7.25rem !important;
+}
+.module-contact-form .form-container .fluentform .iti__country-list {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  color: #1f2937;
+  margin-top: 0.35rem;
 }
 .module-contact-form .form-container .fluentform .ff-btn,
 .module-contact-form .form-container .fluentform .ff-btn-submit,
@@ -1856,7 +1904,9 @@ p {
   resize: vertical;
   min-height: 120px;
 }
-.module-contact-form .form-container form button,
+.module-contact-form .form-container form .ff-btn-submit,
+.module-contact-form .form-container form .ff-btn-primary,
+.module-contact-form .form-container form button[type=submit],
 .module-contact-form .form-container form input[type=submit] {
   display: inline-block;
   padding: 1rem 1.5rem;
@@ -1871,29 +1921,38 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.module-contact-form .form-container form button:hover,
+.module-contact-form .form-container form .ff-btn-submit:hover,
+.module-contact-form .form-container form .ff-btn-primary:hover,
+.module-contact-form .form-container form button[type=submit]:hover,
 .module-contact-form .form-container form input[type=submit]:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.module-contact-form .form-container form button:active,
+.module-contact-form .form-container form .ff-btn-submit:active,
+.module-contact-form .form-container form .ff-btn-primary:active,
+.module-contact-form .form-container form button[type=submit]:active,
 .module-contact-form .form-container form input[type=submit]:active {
   transform: translateY(0);
 }
-.module-contact-form .form-container form button,
+.module-contact-form .form-container form .ff-btn-submit,
+.module-contact-form .form-container form .ff-btn-primary,
+.module-contact-form .form-container form button[type=submit],
 .module-contact-form .form-container form input[type=submit] {
   background-color: #007bff;
   color: #ffffff;
 }
-.module-contact-form .form-container form button:hover,
+.module-contact-form .form-container form .ff-btn-submit:hover,
+.module-contact-form .form-container form .ff-btn-primary:hover,
+.module-contact-form .form-container form button[type=submit]:hover,
 .module-contact-form .form-container form input[type=submit]:hover {
   background-color: rgb(0, 98.4, 204);
   color: #ffffff;
 }
-.module-contact-form .form-container form button,
+.module-contact-form .form-container form .ff-btn-submit,
+.module-contact-form .form-container form .ff-btn-primary,
+.module-contact-form .form-container form button[type=submit],
 .module-contact-form .form-container form input[type=submit] {
-  align-self: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 :where(.fluentform) .ff-btn-submit,

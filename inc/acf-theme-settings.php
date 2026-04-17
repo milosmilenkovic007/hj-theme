@@ -64,8 +64,8 @@ function hj_theme_render_zoho_auth_status( $field ) {
 		return $field;
 	}
 
-	$access_token = get_option( 'zoho_access_token' );
-	$token_expires = get_option( 'zoho_token_expires' );
+	$access_token  = get_option( 'zoho_access_token' );
+	$token_expires = get_option( 'zoho_token_expires_at' );
 	$is_authenticated = ! empty( $access_token ) && ( empty( $token_expires ) || $token_expires > time() );
 	
 	// Get credentials to build auth URL

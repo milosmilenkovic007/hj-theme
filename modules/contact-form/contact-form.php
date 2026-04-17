@@ -25,7 +25,7 @@ $background_style = 'background-color: transparent;';
 			<?php if ( $form_input ) : ?>
 				<div class="form-container">
 					<?php
-					// Accept either a plain ID (e.g., 3) or a full shortcode like [fluentform id="3"]
+					// Accept either a plain ID (e.g., 3 or 4) or a full shortcode like [fluentform id="3"]
 					$shortcode = preg_match( '/\[[^\]]+\]/', $form_input )
 						? $form_input
 						: '[fluentform id="' . esc_attr( $form_input ) . '"]';

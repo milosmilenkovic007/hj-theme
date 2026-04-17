@@ -620,13 +620,13 @@
     },
     {
       "key": "field_hj_zoho_form_id",
-      "label": "Fluent Form ID",
+      "label": "Fluent Form IDs",
       "name": "zoho_form_id",
-      "type": "number",
-      "instructions": "Enter the Fluent Form ID to integrate (e.g., 3)",
+      "type": "text",
+      "instructions": "Enter one or more Fluent Form IDs separated by commas (e.g., 3,4). Legacy single-value configs of 3 or 4 are also supported.",
       "required": 0,
-      "default_value": 3,
-      "min": 1
+      "default_value": "3,4",
+      "placeholder": "3,4"
     },
     {
       "key": "field_hj_zoho_lead_source",
@@ -656,7 +656,7 @@
           "label": "Fluent Forms Field",
           "name": "fluent_field",
           "type": "text",
-          "instructions": "Fluent Forms field name (e.g., names.first_name, names.last_name, email, subject, description)",
+          "instructions": "Fluent Forms field name (e.g., names.first_name, names.last_name, email, subject, message)",
           "required": 1,
           "placeholder": "names.first_name",
           "wrapper": {
@@ -694,7 +694,7 @@
           "zoho_field": "Description"
         },
         {
-          "fluent_field": "description",
+          "fluent_field": "message",
           "zoho_field": "Multi_Line_7"
         },
         {
