@@ -1,0 +1,185 @@
+{
+  "key": "group_hj_thank_you_page",
+  "title": "Thank You Page Content",
+  "fields": [
+    {
+      "key": "field_hj_thank_you_notice",
+      "label": "Content Notes",
+      "name": "",
+      "type": "message",
+      "message": "Edit all visible thank-you page copy here. Phone number and email still come from Theme Settings > Footer contact, and WhatsApp link comes from Theme Settings > Social links.",
+      "new_lines": "wpautop",
+      "esc_html": 0
+    },
+    {
+      "key": "field_hj_thank_you_badge_text",
+      "label": "Badge Text",
+      "name": "thank_you_badge_text",
+      "type": "text",
+      "instructions": "Small label above the main thank-you heading.",
+      "required": 0,
+      "default_value": "Inquiry received"
+    },
+    {
+      "key": "field_hj_thank_you_heading",
+      "label": "Main Heading",
+      "name": "thank_you_heading",
+      "type": "text",
+      "instructions": "Main thank-you headline.",
+      "required": 0,
+      "default_value": "Thank you for your message."
+    },
+    {
+      "key": "field_hj_thank_you_subheading",
+      "label": "Subheading",
+      "name": "thank_you_subheading",
+      "type": "text",
+      "instructions": "Short line below the main heading.",
+      "required": 0,
+      "default_value": "We will get in touch with you shortly."
+    },
+    {
+      "key": "field_hj_thank_you_body_content",
+      "label": "Intro Content",
+      "name": "thank_you_body_content",
+      "type": "wysiwyg",
+      "instructions": "Optional supporting copy below the subheading. Leave empty to use the regular page content editor instead.",
+      "required": 0,
+      "tabs": "visual",
+      "toolbar": "basic",
+      "media_upload": 0
+    },
+    {
+      "key": "field_hj_thank_you_contact_heading",
+      "label": "Contact Box Heading",
+      "name": "thank_you_contact_heading",
+      "type": "text",
+      "instructions": "Heading inside the direct-contact box.",
+      "required": 0,
+      "default_value": "Need to talk now?"
+    },
+    {
+      "key": "field_hj_thank_you_contact_text_both",
+      "label": "Contact Box Text (WhatsApp + Phone)",
+      "name": "thank_you_contact_text_both",
+      "type": "textarea",
+      "instructions": "Shown when both WhatsApp and phone are available.",
+      "required": 0,
+      "default_value": "You can also reach us directly on WhatsApp or give us a call.",
+      "rows": 3,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_hj_thank_you_contact_text_whatsapp",
+      "label": "Contact Box Text (WhatsApp Only)",
+      "name": "thank_you_contact_text_whatsapp",
+      "type": "textarea",
+      "instructions": "Shown when only WhatsApp is available.",
+      "required": 0,
+      "default_value": "You can also reach us directly on WhatsApp.",
+      "rows": 3,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_hj_thank_you_contact_text_phone",
+      "label": "Contact Box Text (Phone Only)",
+      "name": "thank_you_contact_text_phone",
+      "type": "textarea",
+      "instructions": "Shown when only phone is available.",
+      "required": 0,
+      "default_value": "You can also reach us directly by phone.",
+      "rows": 3,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_hj_thank_you_contact_text_fallback",
+      "label": "Contact Box Text (Fallback)",
+      "name": "thank_you_contact_text_fallback",
+      "type": "textarea",
+      "instructions": "Shown when neither WhatsApp nor phone is available.",
+      "required": 0,
+      "default_value": "If you need anything else, our team is here to help.",
+      "rows": 3,
+      "new_lines": "br"
+    },
+    {
+      "key": "field_hj_thank_you_email_prefix",
+      "label": "Email Prefix",
+      "name": "thank_you_email_prefix",
+      "type": "text",
+      "instructions": "Text shown before the email address.",
+      "required": 0,
+      "default_value": "Or email us at"
+    },
+    {
+      "key": "field_hj_thank_you_primary_button_text",
+      "label": "Primary Button Text",
+      "name": "thank_you_primary_button_text",
+      "type": "text",
+      "instructions": "Label for the WhatsApp button.",
+      "required": 0,
+      "default_value": "Message us now",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_hj_thank_you_secondary_button_text",
+      "label": "Secondary Button Text",
+      "name": "thank_you_secondary_button_text",
+      "type": "text",
+      "instructions": "Label for the phone call button.",
+      "required": 0,
+      "default_value": "Call us",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_hj_thank_you_fallback_primary_button_text",
+      "label": "Fallback Primary Button Text",
+      "name": "thank_you_fallback_primary_button_text",
+      "type": "text",
+      "instructions": "Label used when contact details are unavailable.",
+      "required": 0,
+      "default_value": "Back to home",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_hj_thank_you_fallback_secondary_button_text",
+      "label": "Fallback Secondary Button Text",
+      "name": "thank_you_fallback_secondary_button_text",
+      "type": "text",
+      "instructions": "Secondary fallback button label.",
+      "required": 0,
+      "default_value": "Contact page",
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      },
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "templates/thank-you-page.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Editable content for the Thank You Page template",
+  "show_in_rest": 0
+}
